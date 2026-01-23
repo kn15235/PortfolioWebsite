@@ -1,19 +1,15 @@
-# PortfolioWebsite (in progress)
-## 📌 Portfolio Website
+# 📌 Portfolio Website (in progress) 
 
-This is my personal portfolio website built to showcase my projects, skills, and experience as a developer!
 ## 🚀 Features
 - Responsive design for desktop and mobile
-- Smooth animations using Framer Motion
-- Modern styling with Tailwind CSS
-- Built with Next.js (App Router) and TypeScript
+- Modern styling with Tailwind CSS (or CSS?) 
+- Built with HTML, CSS, JS
 - Deployed on Vercel
 
 ## 🛠 Tech Stack (still deciding) 
-- **Next.js** – React framework for routing and performance
-- **TypeScript** – Type-safe JavaScript
-- **Tailwind CSS** – Utility-first styling
-- **Framer Motion** – Animations and transitions
+- **Javascript** – React framework for routing and performance
+- **Tailwind CSS or CSS (still deciding)** – Utility-first styling
+- **HTML**
 - **Vercel** – Hosting and deployment
 
 ## 📂 Pages
