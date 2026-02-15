@@ -1,16 +1,10 @@
-# 📌 Portfolio Website (in progress) 
+# Portfolio Website
 
-## 🚀 Features
-- Responsive design for desktop and mobile
-- Modern styling with Tailwind CSS (or CSS?) 
-- Built with HTML, CSS, JS
-- Deployed on Vercel
-
-## 🛠 Tech Stack (still deciding) 
-- **Javascript** – React framework for routing and performance
-- **Tailwind CSS or CSS (still deciding)** – Utility-first styling
+## Tech Stack 
+- **Javascript** – 
+- **CSS** – Utility-first styling
 - **HTML**
-- **Vercel** – Hosting and deployment
+- **Netlify** – Hosting and deployment
 
 ## 📂 Pages
 - **Home** – Introduction and overview

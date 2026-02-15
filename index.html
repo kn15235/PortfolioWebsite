@@ -1,36 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Portfolio Website</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
-    <header class="navbar">
-    <div class="logo">Your Name</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Blog</a>
-      <a href="#">Projects</a>
-      <a href="#">Publications</a>
-      <a href="#">Contact</a>
-    </nav>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">
+        <span class="logo" aria-hidden="true">⬣</span>
+        <span class="brand-name">Your Name</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#home" class="active">Home</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#teaching">Teaching</a>
+      </nav>
+
+      <button id="themeBtn" class="theme-btn" aria-label="Toggle theme" title="Toggle theme">
+        ☀︎
+      </button>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="intro">
-      <h1>Your Name</h1>
-      <p>Undergraduate Student in Computer Science</p>
-      <button id="themeToggle">Toggle Theme</button>
-    </div>
-    <div class="photo">
-      <img src="https://via.placeholder.com/300" alt="Profile Photo">
-    </div>
-  </section>
+  <!-- HERO -->
+  <main id="home" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+
+        <!-- LEFT (TEXT) -->
+        <div class="hero-left">
+          <h1>Your Name</h1>
+
+          <div class="location">
+            <span class="pin">📍</span>
+            <span>City, State, Country</span>
+          </div>
+
+          <p class="bio">
+            Master's student in Computer Science at <b>Your University</b>.
+            My research interests lie at the intersection of
+            <span class="nowrap">robot learning</span>, world modeling, and
+            human-aligned decision making.
+          </p>
+
+          <p class="bio">
+            I am always open to connecting. Please feel free to reach out!
+          </p>
+
+          <div class="actions">
+            <a class="pill primary" href="#">Resume</a>
+            <a class="pill" href="#">CV</a>
+
+            <div class="icons">
+              <a href="#" aria-label="LinkedIn" title="LinkedIn">in</a>
+              <a href="#" aria-label="GitHub" title="GitHub">⌂</a>
+              <a href="#" aria-label="Google Scholar" title="Scholar">🎓</a>
+              <a href="#" aria-label="X" title="X">X</a>
+              <a href="#" aria-label="YouTube" title="YouTube">▶</a>
+              <a href="#" aria-label="Email" title="Email">✉</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT (PHOTO) -->
+        <div class="hero-right">
+          <div class="photo-card">
+            <img
+              src="https://images.unsplash.com/photo-1520975958225-2fa1f58a0f7b?auto=format&fit=crop&w=800&q=80"
+              alt="Headshot"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
 
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-
