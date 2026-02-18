@@ -1,90 +1,347 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Your Name — Portfolio</title>
 
-  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <header class="nav">
-    <div class="container nav-inner">
+  <!-- navigation bar -->
+  <nav class="topbar">
+    <div class="topbar-inner">
+
       <a class="brand" href="#home">
-        <span class="logo" aria-hidden="true">⬣</span>
-        <span class="brand-name">Your Name</span>
+        <span class="brand-mark">🍀</span>
+        <span class="brand-name"> Welcome to my website! :D </span>
       </a>
 
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#home" class="active">Home</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#teaching">Teaching</a>
-      </nav>
+      <div class="toplinks">
+        <button class="nav-link active" data-page="home">Overview</button>
+        <button class="nav-link" data-page="projects">Projects</button>
+        <button class="nav-link" data-page="resume">Resume</button>
+        <button class="nav-link" data-page="hobbies">Hobbies</button>
 
-      <button id="themeBtn" class="theme-btn" aria-label="Toggle theme" title="Toggle theme">
-        ☀︎
-      </button>
+        <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle theme">+</button>
+      </div>
+
     </div>
-  </header>
+  </nav>
 
-  <!-- HERO -->
-  <main id="home" class="container">
-    <section class="hero">
-      <div class="hero-grid">
 
-        <!-- LEFT (TEXT) -->
-        <div class="hero-left">
-          <h1>Your Name</h1>
+  <!-- home page-->
+  <div class="page active" id="page-home">
 
-          <div class="location">
-            <span class="pin">📍</span>
-            <span>City, State, Country</span>
+    <!-- Header Banner -->
+    <div class="header-banner"></div>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+
+      <!-- Profile Pic Row -->
+      <div class="profile-pic-row">
+        <div class="profile-pic-area">
+          <div class="profile-pic-wrapper">
+            <!-- Replace placeholder with your photo -->
+            <!-- <img src="assets/images/profile.jpg" alt="Profile" /> -->
+            <div class="profile-pic-placeholder">👤</div>
           </div>
+        </div>
+        <div class="profile-pic-spacer"></div>
+      </div>
 
-          <p class="bio">
-            Master's student in Computer Science at <b>Your University</b>.
-            My research interests lie at the intersection of
-            <span class="nowrap">robot learning</span>, world modeling, and
-            human-aligned decision making.
-          </p>
+      <div class="panels-container">
 
-          <p class="bio">
-            I am always open to connecting. Please feel free to reach out!
-          </p>
+<div class="panel-col panel-col-left">
 
-          <div class="actions">
-            <a class="pill primary" href="#">Resume</a>
-            <a class="pill" href="#">CV</a>
+  <!--  Profile Info Card  -->
+  <div class="panel">
+    <div class="panel-body gh-profile-clean">
 
-            <div class="icons">
-              <a href="#" aria-label="LinkedIn" title="LinkedIn">in</a>
-              <a href="#" aria-label="GitHub" title="GitHub">⌂</a>
-              <a href="#" aria-label="Google Scholar" title="Scholar">🎓</a>
-              <a href="#" aria-label="X" title="X">X</a>
-              <a href="#" aria-label="YouTube" title="YouTube">▶</a>
-              <a href="#" aria-label="Email" title="Email">✉</a>
+      <div class="gh-name">Kristine N.</div>
+      <div class="gh-username">@kn15235</div>
+
+      <div class="gh-bio">
+        Greetings! I am a 3rd year Computer Engineering & Computer Science student at California State University, Long Beach!
+      </div>
+
+      <div class="gh-links">
+        <a class="gh-link" href="mailto:youremail@example.com">
+           🍀 knguyen15235@example.com
+        </a>
+        <a class="gh-link" href="https://github.com/yourusername" target="_blank">
+           🍀 github.com/kn15235
+        </a>
+        <a class="gh-link" href="https://linkedin.com/in/yourusername" target="_blank">
+           🍀 linkedin.com/in/kn15235
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== Working On Card ===== -->
+  <div class="panel">
+    <div class="panel-body gh-now-clean">
+
+      <div class="gh-now-title">Working On</div>
+
+      <div class="gh-now-item">
+        • Building a GitHub-style portfolio site!
+      </div>
+
+      <div class="gh-now-item">
+        • DevSprite.io
+      </div>
+
+      <div class="gh-now-item">
+        • improving my sleep schedule...
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+        <!-- Middle Column -->
+        <div class="panel-col panel-col-mid">
+
+          <!-- Experience -->
+          <div class="panel panel-exp">
+            <div class="panel-header exp-header">
+              <h2>Experience</h2>
+
+              <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="work">Work</button>
+                <button class="tab-btn" data-tab="education">Education</button>
+              </div>
+            </div>
+
+            <div class="panel-body">
+
+              <!-- Work -->
+              <div class="tab-content active" id="tab-work">
+                <div class="exp-list">
+
+                  <div class="exp-item">
+                    <div class="exp-logo">🐝</div>
+                    <div class="exp-content">
+                      <div class="exp-top">
+                        <span class="exp-company">Buildify</span>
+                        <span class="exp-date">Jan 2026 – Present</span>
+                      </div>
+                      <div class="exp-role">Software Engineer Intern</div>
+                      <div class="exp-desc">💻 Engineering Ops team </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+              <!-- Education-->
+              <div class="tab-content" id="tab-education">
+                <div class="edu-list">
+
+                  <div class="exp-item">
+                    <div class="exp-logo">🐝</div>
+                    <div class="exp-content">
+                      <div class="exp-top">
+                        <span class="exp-company">California State University, Long Beach</span>
+                        <span class="exp-date">2024 – Present</span>
+                      </div>
+                      <div class="exp-role">B.S. Computer Engineering & Computer Science</div>
+                      <div class="exp-desc"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
           </div>
-        </div>
 
-        <!-- RIGHT (PHOTO) -->
-        <div class="hero-right">
-          <div class="photo-card">
-            <img
-              src="https://images.unsplash.com/photo-1520975958225-2fa1f58a0f7b?auto=format&fit=crop&w=800&q=80"
-              alt="Headshot"
-            />
+          <!-- GitHub Contributions -->
+          <div class="ghcal-wrap">
+            <div class="ghcal-top">
+              <div class="ghcal-title">GitHub contributions</div>
+            </div>
+
+            <div class="ghcal-card">
+              <img
+                class="ghcal-img"
+                src="https://ghchart.rshah.org/216e39/kn15235"
+                alt="GitHub contribution chart"
+                loading="lazy"
+              />
+
+              <div class="ghcal-legend">
+                <span>Less</span>
+                <span class="sq s0"></span>
+                <span class="sq s1"></span>
+                <span class="sq s2"></span>
+                <span class="sq s3"></span>
+                <span class="sq s4"></span>
+                <span>More</span>
+              </div>
+            </div>
           </div>
+
         </div>
 
-      </div>
-    </section>
-  </main>
+        <!-- Right Column -->
+        <div class="panel-col panel-col-right">
+
+          <!-- News -->
+          <div class="panel panel-news">
+            <div class="panel-header"><h2>News</h2></div>
+            <div class="panel-body">
+              <div class="news-list">
+
+                <div class="news-item">
+                  <div class="news-dot-col">
+                    <div class="news-dot"></div>
+                    <div class="news-line"></div>
+                  </div>
+                  <div class="news-body">
+                    <div class="news-date">2/2026</div>
+                    <div class="news-text">
+                      Upcoming Panelist Speaker at</a>.
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="panel panel-skills">
+            <div class="panel-header"><h3>Skills</h3></div>
+            <div class="panel-body">
+            <div class="skills-grid">
+
+              <div class="skill-chip">
+                <img src="https://cdn.simpleicons.org/python" alt="Python" />
+                Python
+              </div>
+
+              <div class="skill-chip">
+                <img src="https://cdn.simpleicons.org/cplusplus" alt="C++" />
+                C / C++
+              </div>
+
+              <div class="skill-chip">
+                <img src="https://cdn.simpleicons.org/mysql" alt="SQL" />
+                SQL
+              </div>
+
+              <div class="skill-chip">
+                <img src="https://cdn.simpleicons.org/pytorch" alt="PyTorch" />
+                PyTorch
+              </div>
+
+              <div class="skill-chip">
+                <img src="https://cdn.simpleicons.org/react" alt="React" />
+                React
+              </div>
+
+              <div class="skill-chip">
+                <img src="https://cdn.simpleicons.org/nextdotjs" alt="Next.js" />
+                Next.js
+              </div>
+
+              <div class="skill-chip">
+                <img src="https://cdn.simpleicons.org/fastapi" alt="FastAPI" />
+                FastAPI
+              </div>
+
+              <div class="skill-chip">
+                <img src="https://cdn.simpleicons.org/opencv" alt="OpenCV" />
+                OpenCV
+              </div>
+
+              <div class="skill-chip">
+                <img src="https://cdn.simpleicons.org/huggingface" alt="Hugging Face" />
+                Hugging Face
+              </div>
+
+              <div class="skill-chip">
+                <img src="https://cdn.simpleicons.org/docker" alt="Docker" />
+                Docker
+              </div>
+
+              <div class="skill-chip">
+                <img src="https://cdn.simpleicons.org/amazonaws" alt="AWS" />
+                AWS
+              </div>
+
+            </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div> <!-- /.panels-container -->
+    </div> <!-- /.main-layout -->
+  </div> <!-- /#page-home -->
+
+
+  <!-- Other Pages -->
+  <div class="page" id="page-publications">
+    <div class="page-content">
+      <h1>Projects</h1>
+      <p>Coming soon.</p>
+    </div>
+  </div>
+
+  <div class="page" id="page-projects">
+    <div class="page-content">
+      <h1>Resume</h1>
+      <p>Coming soon.</p>
+    </div>
+  </div>
+
+  <div class="page" id="page-teaching">
+    <div class="page-content">
+      <h1>Hobbies</h1>
+      <p>Coming soon.</p>
+    </div>
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-left">
+      © 2026 Your Name. All rights reserved.
+    </div>
+
+    <div class="footer-right">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <span class="footer-dot">·</span>
+      <span>Built with HTML, CSS & JS</span>
+    </div>
+
+  </div>
+</footer>
+
 </html>
+
+
