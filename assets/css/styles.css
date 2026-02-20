@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* =========================
    GitHub Light Theme
    ========================= */
@@ -27,10 +28,33 @@
   /* UI */
   --shadow:        none;
   --radius:        6px;
+=======
+/* Light Theme */
+:root {
+  --green:         #2d7a4f;
+  --green-muted:   rgba(45,122,79,0.10);
+
+  --bg:            #ffffff;
+  --bg-nav:        #ffffff;
+
+  --card-bg:       #ffffff;
+  --card-bg-2:     #f5f5f5;
+
+  --border:        rgba(0,0,0,0.10);
+  --border-light:  rgba(0,0,0,0.06);
+
+  --text-primary:  #111827;
+  --text-secondary:#4b5563;
+  --text-muted:    #6b7280;
+
+  --shadow:        0 10px 30px rgba(0,0,0,0.06);
+  --radius:        14px;
+>>>>>>> 334c466967d089ee728277eae75a656d6fc14e28
 
   --header-height: 210px;
 }
 
+<<<<<<< HEAD
 
 /* =========================
    GitHub Dark Theme
@@ -63,6 +87,26 @@ body.dark {
 }
 
 
+=======
+/* Dark theme overrides */
+body.dark {
+  --bg:            #0f1115;
+  --bg-nav:        #0f1115;
+
+  --card-bg:       #121621;
+  --card-bg-2:     #0f141f;
+
+  --border:        rgba(255,255,255,0.10);
+  --border-light:  rgba(255,255,255,0.08);
+
+  --text-primary:  #e9edf5;
+  --text-secondary:#b7bfd0;
+  --text-muted:    #7f8aa3;
+
+  --shadow:        0 10px 30px rgba(0,0,0,0.35);
+}
+
+>>>>>>> 334c466967d089ee728277eae75a656d6fc14e28
 /* Reset & Base  */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 14px; }
