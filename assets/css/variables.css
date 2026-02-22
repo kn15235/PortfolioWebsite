@@ -1,0 +1,46 @@
+/* Light Theme */
+:root {
+  --accent:        #0969da;
+  --accent-hover:  #0550ae;
+  --success:       #2da44e;
+  --danger:        #cf222e;
+
+  --bg:            #ffffff;
+  --bg-nav:        #ffffff;
+  --card-bg:       #ffffff;
+  --card-bg-2:     #f6f8fa;
+
+  --border:        #d0d7de;
+  --border-light:  #d8dee4;
+
+  --text-primary:  #24292f;
+  --text-secondary:#57606a;
+  --text-muted:    #6e7781;
+
+  --shadow:        none;
+  --radius:        6px;
+
+  --header-height: 210px;
+}
+
+/* Dark Theme */
+body.dark {
+  --accent:        #2f81f7;
+  --accent-hover:  #1f6feb;
+  --success:       #3fb950;
+  --danger:        #f85149;
+
+  --bg:            #0d1117;
+  --bg-nav:        #0d1117;
+  --card-bg:       #161b22;
+  --card-bg-2:     #0d1117;
+
+  --border:        #30363d;
+  --border-light:  #21262d;
+
+  --text-primary:  #e6edf3;
+  --text-secondary:#8b949e;
+  --text-muted:    #7d8590;
+
+  --shadow:        none;
+}
