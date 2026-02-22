@@ -79,6 +79,50 @@
   font-size: 12px;
 }
 
+.overview-page .exp-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.overview-page .exp-header .tab-buttons {
+  padding: 1px;
+  gap: 1px;
+}
+
+.overview-page .exp-header .tab-btn {
+  padding: 4px 8px;
+  font-size: 11px;
+  line-height: 1.1;
+}
+
+@media (min-width: 1001px) {
+  .overview-page .panels-container {
+    height: calc(100vh - 270px);
+    min-height: 480px;
+    max-height: 660px;
+  }
+
+  .overview-page .panel-col,
+  .overview-page .panel,
+  .overview-page .panel-body {
+    min-height: 0;
+  }
+
+  .overview-page .panel-exp .panel-body,
+  .overview-page .panel-news .panel-body,
+  .overview-page .panel-skills .panel-body {
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .overview-page .panel-exp .panel-body::-webkit-scrollbar,
+  .overview-page .panel-news .panel-body::-webkit-scrollbar,
+  .overview-page .panel-skills .panel-body::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .gh-profile-clean {
   display: flex;
   flex-direction: column;
@@ -132,6 +176,25 @@
   background: var(--card-bg-2);
   color: var(--text-primary);
   text-decoration: none;
+}
+
+.gh-now-clean {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gh-now-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.gh-now-item {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text-secondary);
 }
 
 .panel-ghcal {
@@ -531,6 +594,11 @@ body.dark .project-nav-item.active {
 
 body.dark .project-nav-item.active .side-dot {
   background: #3fb950;
+}
+
+.project-nav-item.active .side-text {
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .pexp-main {
@@ -1097,13 +1165,14 @@ body.dark .song-artist {
 }
 
 .hobbies-explorer .blog-timeline-item.active {
-  background: rgba(46, 160, 67, 0.12);
+  background: rgba(46, 160, 67, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(46, 160, 67, 0.65);
 }
 
 .hobbies-explorer .blog-timeline-item.active .blog-timeline-node {
-  border-color: #2ea043;
-  background: #2ea043;
-  box-shadow: 0 0 0 2px rgba(46, 160, 67, 0.18);
+  border-color: #1f883d;
+  background: #1f883d;
+  box-shadow: 0 0 0 2px rgba(31, 136, 61, 0.28);
 }
 
 body.dark .blog-timeline::before {
