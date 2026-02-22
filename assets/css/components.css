@@ -66,6 +66,26 @@
   color: var(--text-primary);
 }
 
+.tab-btn[data-tab="work"] {
+  color: #cf222e;
+}
+
+.tab-btn[data-tab="work"].active {
+  color: #cf222e;
+  border-color: rgba(207, 34, 46, 0.35);
+  background: rgba(207, 34, 46, 0.08);
+}
+
+.tab-btn[data-tab="education"] {
+  color: #1f883d;
+}
+
+.tab-btn[data-tab="education"].active {
+  color: #1f883d;
+  border-color: rgba(31, 136, 61, 0.35);
+  background: rgba(31, 136, 61, 0.12);
+}
+
 .tab-content { display: none; }
 .tab-content.active { display: block; }
 

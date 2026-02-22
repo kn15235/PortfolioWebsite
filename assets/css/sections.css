@@ -218,12 +218,15 @@
   background: var(--card-bg);
   padding: 6px 8px 5px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ghcal-img {
-  width: 92%;
-  max-width: 92%;
-  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
   display: block;
   border-radius: 6px;
 }
@@ -231,6 +234,7 @@
 .ghcal-legend {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   margin-top: 4px;
   font-size: 11px;
@@ -260,8 +264,6 @@ body.dark .ghcal-legend .s4 { background: #39d353; border-color: #39d353; }
 @media (max-width: 820px) {
   .ghcal-img {
     width: 100%;
-    max-width: 100%;
-    margin-left: 0;
   }
 }
 
@@ -649,12 +651,18 @@ body.dark .project-nav-item.active .side-dot {
 .pexp-tag {
   font-size: 11px;
   text-transform: lowercase;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(31, 136, 61, 0.35);
   border-radius: 999px;
   padding: 3px 10px;
-  background: var(--card-bg-2);
-  color: var(--text-secondary);
+  background: rgba(46, 160, 67, 0.14);
+  color: #1f883d;
   font-weight: 700;
+}
+
+body.dark .pexp-tag {
+  border-color: rgba(63, 185, 80, 0.4);
+  background: rgba(63, 185, 80, 0.2);
+  color: #3fb950;
 }
 
 .pexp-grid-2 {
@@ -981,8 +989,9 @@ body.dark .song-artist {
 }
 
 .blog-head {
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
+  gap: 10px;
 }
 
 .blog-head-left h2 {
@@ -993,6 +1002,12 @@ body.dark .song-artist {
   margin-top: 2px;
   font-size: 12px;
   color: var(--text-secondary);
+}
+
+.blog-head-tags {
+  margin-left: auto;
+  justify-content: flex-end;
+  margin-top: 2px;
 }
 
 .blog-lang {
@@ -1190,6 +1205,16 @@ body.dark .hobbies-explorer .blog-timeline-item.active .blog-timeline-node {
 }
 
 @media (max-width: 820px) {
+  .blog-head {
+    flex-wrap: wrap;
+  }
+
+  .blog-head-tags {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
   .blog-music-content {
     flex-direction: column;
   }

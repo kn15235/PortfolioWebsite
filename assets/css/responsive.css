@@ -199,9 +199,8 @@
     padding: 6px;
   }
 
-  .ghcal-img {
-    width: 100%;
-    max-width: 100%;
+  .ghcal-calendar {
+    overflow-x: auto;
   }
 
   .pexp-title {
