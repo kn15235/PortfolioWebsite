@@ -15,3 +15,108 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-hover); text-decoration: underline; }
 
 .page { padding-top: 58px; }
+
+/* Keep topbar static; animate only content/footer on page transition */
+.page,
+.site-footer {
+  opacity: 1;
+  transition: opacity 180ms ease;
+}
+
+body.page-leave .page,
+body.page-leave .site-footer {
+  opacity: 0;
+}
+
+/* Simple site-wide motion */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+body.is-ready .reveal {
+  animation: fade-up 460ms ease-out both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Selection/switch animations */
+.tab-content {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.tab-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tab-content.switch-in,
+.pexp-main.switch-in,
+.blog-panel.switch-in {
+  animation: switch-in 220ms ease-out both;
+}
+
+.select-pop {
+  animation: select-pop 140ms ease-out;
+}
+
+@keyframes switch-in {
+  from {
+    opacity: 0.3;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes select-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.004); }
+  100% { transform: scale(1); }
+}
+
+/* Hover motion polish */
+.panel,
+.skill-chip,
+.project-nav-item,
+.blog-timeline-item {
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.nav-link,
+.theme-btn {
+  transition: none;
+}
+
+.panel:hover {
+  transform: translateY(-1px);
+}
+
+/* Respect reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  body.is-ready .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .panel,
+  .skill-chip,
+  .project-nav-item,
+  .blog-timeline-item {
+    transition: none;
+  }
+}

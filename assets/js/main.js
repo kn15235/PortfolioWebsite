@@ -12,7 +12,13 @@ function initExpTabs() {
         btn.classList.add("active");
 
         contents.forEach((c) => c.classList.remove("active"));
-        panel.querySelector(`#tab-${target}`)?.classList.add("active");
+        const targetContent = panel.querySelector(`#tab-${target}`);
+        targetContent?.classList.add("active");
+        if (targetContent) {
+          targetContent.classList.remove("switch-in");
+          void targetContent.offsetWidth;
+          targetContent.classList.add("switch-in");
+        }
       });
     });
   });
@@ -23,21 +29,27 @@ function initThemeToggle() {
   const btn = document.getElementById("themeToggle");
   if (!btn) return;
 
-  const setThemeIcon = () => {
+  const setThemeIcon = (animate = false) => {
     const isDark = document.body.classList.contains("dark");
     btn.innerHTML = isDark
       ? '<i class="bi bi-sun-fill"></i>'
       : '<i class="bi bi-moon-stars-fill"></i>';
+
+    if (animate) {
+      btn.classList.remove("icon-anim");
+      void btn.offsetWidth;
+      btn.classList.add("icon-anim");
+    }
   };
 
   const saved = localStorage.getItem("theme");
   if (saved === "dark") document.body.classList.add("dark");
-  setThemeIcon();
+  setThemeIcon(false);
 
   btn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-    setThemeIcon();
+    setThemeIcon(true);
   });
 }
 
@@ -243,6 +255,7 @@ function initProjectsExplorer() {
   const renderProject = (projectKey) => {
     const project = projectData[projectKey];
     if (!project) return;
+    const mainPanel = root.querySelector(".pexp-main");
 
     navItems.forEach((item) => {
       item.classList.toggle("active", item.dataset.project === projectKey);
@@ -291,11 +304,20 @@ function initProjectsExplorer() {
         `;
       })
       .join("");
+
+    if (mainPanel) {
+      mainPanel.classList.remove("switch-in");
+      void mainPanel.offsetWidth;
+      mainPanel.classList.add("switch-in");
+    }
   };
 
   navItems.forEach((item) => {
     item.addEventListener("click", () => {
       const key = item.dataset.project;
+      item.classList.remove("select-pop");
+      void item.offsetWidth;
+      item.classList.add("select-pop");
       renderProject(key);
     });
   });
@@ -319,11 +341,80 @@ function initHobbiesExplorer() {
 
   const items = root.querySelectorAll(".side-item");
   const search = root.querySelector(".projects-search");
+  const blogPanel = root.querySelector(".blog-panel");
+  const titleEl = root.querySelector("#blogTitle");
+  const dateEl = root.querySelector("#blogDate");
+  const heroEl = root.querySelector("#blogHero");
+  const p1El = root.querySelector("#blogP1");
+  const p2El = root.querySelector("#blogP2");
+  const trackEl = root.querySelector("#blogTrack");
+  const artistEl = root.querySelector("#blogArtist");
+
+  const blogData = {
+    "about-you": {
+      title: "About You",
+      date: "Monday, January 19, 2026",
+      track: "About You",
+      artist: "The 1975",
+      image:
+        "https://images.unsplash.com/photo-1516431883659-655d41c09bf9?auto=format&fit=crop&w=1600&q=80",
+      p1:
+        "Stargate SG-1 S03E06 is probably one of my favorite episodes so far. Imagine fleeing to an alternate reality to escape your own, ravaged by a plague you are unable to fight against and which has decimated your world, your family, your friends, and your love.",
+      p2:
+        "Outside of coding, I keep a small blog like this to capture moments, songs, and scenes that make a week memorable. It helps me slow down and keep a creative rhythm."
+    },
+    "point-of-view": {
+      title: "Point of View",
+      date: "Sunday, December 28, 2025",
+      track: "Nights",
+      artist: "Frank Ocean",
+      image:
+        "https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=1600&q=80",
+      p1:
+        "Random late-night thought dump: sometimes perspective changes faster than circumstance. The same street can feel heavy one day and cinematic the next, just because your headspace shifted.",
+      p2:
+        "I wrote this entry after a long walk and too much coffee. Placeholder text for now, but this is the kind of mini-journal format I want to keep filling in over time."
+    },
+    "autumn-twilight": {
+      title: "Autumn Twilight",
+      date: "Wednesday, October 22, 2025",
+      track: "Sweater Weather",
+      artist: "The Neighbourhood",
+      image:
+        "https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?auto=format&fit=crop&w=1600&q=80",
+      p1:
+        "Another placeholder entry: leaves, cold air, and that very specific 5:30 PM glow where everything looks like a film still. Good weather for quiet playlists and no-notification mode.",
+      p2:
+        "I want this section to read like a personal timeline of snapshots. Not polished essays, just short observations that feel real and easy to revisit later."
+    }
+  };
+
+  const renderBlog = (key) => {
+    const item = blogData[key];
+    if (!item || !titleEl || !dateEl || !heroEl || !p1El || !p2El || !trackEl || !artistEl) return;
+    titleEl.textContent = item.title;
+    dateEl.textContent = item.date;
+    trackEl.textContent = item.track;
+    artistEl.textContent = item.artist;
+    heroEl.src = item.image;
+    heroEl.alt = item.title;
+    p1El.textContent = item.p1;
+    p2El.textContent = item.p2;
+  };
 
   items.forEach((item) => {
     item.addEventListener("click", () => {
       items.forEach((x) => x.classList.remove("active"));
       item.classList.add("active");
+      item.classList.remove("select-pop");
+      void item.offsetWidth;
+      item.classList.add("select-pop");
+      renderBlog(item.dataset.blog);
+      if (blogPanel) {
+        blogPanel.classList.remove("switch-in");
+        void blogPanel.offsetWidth;
+        blogPanel.classList.add("switch-in");
+      }
     });
   });
 
@@ -336,6 +427,68 @@ function initHobbiesExplorer() {
       });
     });
   }
+
+  const active = root.querySelector(".side-item.active");
+  if (active?.dataset.blog) renderBlog(active.dataset.blog);
+}
+
+function initSiteAnimations() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.body.classList.add("is-ready");
+    return;
+  }
+
+  const animated = document.querySelectorAll(
+    ".header-banner, .profile-pic-row, .panel, .hobby-entry, .blog-panel, .pexp-main > .panel"
+  );
+
+  animated.forEach((el, i) => {
+    el.classList.add("reveal");
+    el.style.animationDelay = `${Math.min(i * 45, 420)}ms`;
+  });
+
+  requestAnimationFrame(() => {
+    document.body.classList.add("is-ready");
+  });
+}
+
+function initPageNavigationTransition() {
+  const links = document.querySelectorAll(".nav-link[href]");
+  let isNavigating = false;
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      if (isNavigating) {
+        e.preventDefault();
+        return;
+      }
+
+      const href = link.getAttribute("href");
+      if (!href) return;
+
+      if (
+        e.defaultPrevented ||
+        e.button !== 0 ||
+        e.metaKey ||
+        e.ctrlKey ||
+        e.shiftKey ||
+        e.altKey
+      ) {
+        return;
+      }
+
+      if (href.startsWith("#")) return;
+      const targetUrl = new URL(href, window.location.href);
+      if (targetUrl.origin !== window.location.origin) return;
+      if (targetUrl.pathname === window.location.pathname && targetUrl.hash === window.location.hash) return;
+
+      e.preventDefault();
+      isNavigating = true;
+      document.body.classList.add("page-leave");
+      window.setTimeout(() => {
+        window.location.href = targetUrl.href;
+      }, 140);
+    });
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -343,4 +496,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
   initProjectsExplorer();
   initHobbiesExplorer();
+  initSiteAnimations();
+  initPageNavigationTransition();
 });

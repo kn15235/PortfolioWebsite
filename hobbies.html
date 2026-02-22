@@ -39,21 +39,21 @@
           <div class="side-section">
             <div class="side-title">Recent</div>
             <div class="blog-timeline">
-              <button class="project-nav-item side-item blog-timeline-item active" type="button">
+            <button class="project-nav-item side-item blog-timeline-item active" type="button" data-blog="about-you">
                 <span class="blog-timeline-node"></span>
                 <span class="blog-timeline-text">
                   <b>About You</b>
                   <small>Jan 19, 2026</small>
                 </span>
               </button>
-              <button class="project-nav-item side-item blog-timeline-item" type="button">
+            <button class="project-nav-item side-item blog-timeline-item" type="button" data-blog="point-of-view">
                 <span class="blog-timeline-node"></span>
                 <span class="blog-timeline-text">
                   <b>Point of View</b>
                   <small>Dec 28, 2025</small>
                 </span>
               </button>
-              <button class="project-nav-item side-item blog-timeline-item" type="button">
+            <button class="project-nav-item side-item blog-timeline-item" type="button" data-blog="autumn-twilight">
                 <span class="blog-timeline-node"></span>
                 <span class="blog-timeline-text">
                   <b>Autumn Twilight</b>
@@ -68,8 +68,8 @@
       <section class="panel blog-panel">
         <div class="panel-header blog-head">
           <div class="blog-head-left">
-            <h2>About You</h2>
-            <div class="blog-date">Monday, January 19, 2026</div>
+            <h2 id="blogTitle">About You</h2>
+            <div class="blog-date" id="blogDate">Monday, January 19, 2026</div>
           </div>
         </div>
 
@@ -79,8 +79,8 @@
             <div class="blog-music-content">
               <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=320&q=80" alt="Album art" loading="lazy" />
               <div class="blog-music-meta">
-                <div class="blog-track">About You</div>
-                <div class="blog-artist">The 1975</div>
+                <div class="blog-track" id="blogTrack">About You</div>
+                <div class="blog-artist" id="blogArtist">The 1975</div>
                 <div class="blog-actions">
                   <a href="#" class="blog-btn">Play</a>
                   <a href="#" class="blog-link">View in Apple Music</a>
@@ -89,14 +89,14 @@
             </div>
           </div>
 
-          <img class="blog-hero" src="https://images.unsplash.com/photo-1516431883659-655d41c09bf9?auto=format&fit=crop&w=1600&q=80" alt="Snow scene" loading="lazy" />
+          <img class="blog-hero" id="blogHero" src="https://images.unsplash.com/photo-1516431883659-655d41c09bf9?auto=format&fit=crop&w=1600&q=80" alt="Snow scene" loading="lazy" />
 
-          <p>
+          <p id="blogP1">
             Stargate SG-1 S03E06 is probably one of my favorite episodes so far. Imagine fleeing
             to an alternate reality to escape your own, ravaged by a plague you are unable to
             fight against and which has decimated your world, your family, your friends, and your love.
           </p>
-          <p>
+          <p id="blogP2">
             Outside of coding, I keep a small blog like this to capture moments, songs, and scenes
             that make a week memorable. It helps me slow down and keep a creative rhythm.
           </p>

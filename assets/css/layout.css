@@ -39,6 +39,7 @@
   border: 0; background: transparent;
   color: var(--nav-link-color);
   font-size: 13px;
+  font-weight: 600;
   padding: 8px 10px;
   border-radius: 6px;
   cursor: pointer;
@@ -49,7 +50,7 @@
   opacity: 0.95;
 }
 .nav-link:hover { background: var(--nav-link-hover-bg); color: var(--nav-link-hover-text); }
-.nav-link.active { color: var(--nav-link-active-text); font-weight: 700; position: relative; }
+.nav-link.active { color: var(--nav-link-active-text); font-weight: 600; position: relative; }
 .nav-link.active::after {
   content: "";
   position: absolute;
@@ -67,6 +68,21 @@
   background: var(--theme-btn-bg);
   color: var(--theme-btn-text);
   cursor: pointer;
+}
+
+.theme-btn i {
+  display: inline-block;
+  transform-origin: 50% 55%;
+}
+
+.theme-btn.icon-anim i {
+  animation: theme-icon-toggle 220ms ease;
+}
+
+@keyframes theme-icon-toggle {
+  0% { transform: rotate(-18deg) scale(0.86); opacity: 0.4; }
+  60% { transform: rotate(6deg) scale(1.08); opacity: 1; }
+  100% { transform: rotate(0deg) scale(1); opacity: 1; }
 }
 
 /* banner & layout */
