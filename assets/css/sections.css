@@ -1,0 +1,70 @@
+/* experience items */
+.exp-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+.exp-item:last-child { border-bottom: none; }
+
+.exp-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  background: var(--card-bg-2);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.exp-content { flex: 1; min-width: 0; }
+
+.exp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.exp-company { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+
+.exp-date {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: var(--card-bg-2);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.exp-role { font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 5px; }
+.exp-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.45; }
+
+/* news timeline */
+.news-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+.news-item:last-child { border-bottom: none; }
+
+.news-dot-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6px;
+  flex-shrink: 0;
+}
+
+.news-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--text-muted); }
+.news-line { width: 1px; flex: 1; background: var(--border-light); margin-top: 6px; }
+.news-item:last-child .news-line { display: none; }
+
+.news-date { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+.news-text { font-size: 12.5px; color: var(--text-secondary); line-height: 1.45; }
