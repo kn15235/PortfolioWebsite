@@ -23,12 +23,21 @@ function initThemeToggle() {
   const btn = document.getElementById("themeToggle");
   if (!btn) return;
 
+  const setThemeIcon = () => {
+    const isDark = document.body.classList.contains("dark");
+    btn.innerHTML = isDark
+      ? '<i class="bi bi-sun-fill"></i>'
+      : '<i class="bi bi-moon-stars-fill"></i>';
+  };
+
   const saved = localStorage.getItem("theme");
   if (saved === "dark") document.body.classList.add("dark");
+  setThemeIcon();
 
   btn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+    setThemeIcon();
   });
 }
 
@@ -304,8 +313,34 @@ function initProjectsExplorer() {
   renderProject("portfolio");
 }
 
+function initHobbiesExplorer() {
+  const root = document.querySelector(".hobbies-explorer");
+  if (!root) return;
+
+  const items = root.querySelectorAll(".side-item");
+  const search = root.querySelector(".projects-search");
+
+  items.forEach((item) => {
+    item.addEventListener("click", () => {
+      items.forEach((x) => x.classList.remove("active"));
+      item.classList.add("active");
+    });
+  });
+
+  if (search) {
+    search.addEventListener("input", () => {
+      const q = search.value.trim().toLowerCase();
+      items.forEach((item) => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(q) ? "" : "none";
+      });
+    });
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initExpTabs();
   initThemeToggle();
   initProjectsExplorer();
+  initHobbiesExplorer();
 });

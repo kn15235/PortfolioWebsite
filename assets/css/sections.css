@@ -686,3 +686,446 @@ body.dark .project-nav-item.active .side-dot {
     max-height: none;
   }
 }
+
+/* Hobbies journal */
+.hobby-page {
+  padding-top: 56px;
+}
+
+.hobby-shell {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 12px;
+  display: grid;
+  gap: 14px;
+}
+
+.hobby-entry {
+  border: 1px solid var(--border-light);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.46)),
+    repeating-linear-gradient(0deg, rgba(92, 100, 110, 0.06) 0, rgba(92, 100, 110, 0.06) 1px, transparent 1px, transparent 6px),
+    repeating-linear-gradient(90deg, rgba(92, 100, 110, 0.06) 0, rgba(92, 100, 110, 0.06) 1px, transparent 1px, transparent 6px);
+}
+
+.hobby-entry-head {
+  background: linear-gradient(90deg, #3a3e3a 0%, #2f332f 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 7px 12px 4px;
+}
+
+.hobby-entry-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.hobby-entry-title {
+  color: #f2f4f5;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hobby-bullet {
+  width: 9px;
+  height: 9px;
+  background: #c9c79f;
+  display: inline-block;
+}
+
+.hobby-entry-lang {
+  display: flex;
+  gap: 4px;
+}
+
+.hobby-entry-lang span {
+  font-size: 11px;
+  color: #2a2f2a;
+  background: #d8d8c4;
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+
+.hobby-entry-lang span.active {
+  background: #6e6a49;
+  color: #f4f4e9;
+}
+
+.hobby-entry-date {
+  margin-left: 17px;
+  margin-top: 2px;
+  color: #d4dacd;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.hobby-entry-body {
+  padding: 14px 14px 16px;
+}
+
+.hobby-photo {
+  width: min(100%, 380px);
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.hobby-photo-wide {
+  width: min(100%, 600px);
+}
+
+.hobby-entry-body p {
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+
+.hobby-quote {
+  margin: 12px 0;
+  padding: 8px 12px;
+  border-left: 3px solid #b7b28d;
+  color: #43463d;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.hobby-music-card {
+  width: min(100%, 680px);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.hobby-music-head {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hobby-music-body {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+}
+
+.hobby-music-body img {
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.hobby-music-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.song-title {
+  font-size: 28px;
+  line-height: 1.2;
+  color: #111;
+}
+
+.song-artist {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.song-actions {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.song-btn {
+  display: inline-block;
+  background: #f43f5e;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.song-link {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+body.dark .hobby-entry {
+  background:
+    linear-gradient(rgba(13, 17, 23, 0.7), rgba(13, 17, 23, 0.7)),
+    repeating-linear-gradient(0deg, rgba(78, 88, 104, 0.08) 0, rgba(78, 88, 104, 0.08) 1px, transparent 1px, transparent 6px),
+    repeating-linear-gradient(90deg, rgba(78, 88, 104, 0.08) 0, rgba(78, 88, 104, 0.08) 1px, transparent 1px, transparent 6px);
+}
+
+body.dark .hobby-entry-body p,
+body.dark .hobby-quote {
+  color: #cdd6df;
+}
+
+body.dark .hobby-music-card {
+  background: #111827;
+}
+
+body.dark .song-title {
+  color: #f3f4f6;
+}
+
+body.dark .song-artist {
+  color: #9ca3af;
+}
+
+@media (max-width: 900px) {
+  .hobby-entry-title {
+    font-size: 22px;
+  }
+
+  .song-title {
+    font-size: 22px;
+  }
+}
+
+/* Blog page (single panel) */
+.blog-page {
+  padding-top: 56px;
+}
+
+.blog-panel {
+  width: 100%;
+}
+
+.blog-head {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.blog-head-left h2 {
+  font-size: 18px;
+}
+
+.blog-date {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.blog-lang {
+  display: flex;
+  gap: 6px;
+}
+
+.blog-lang span {
+  border: 1px solid var(--border);
+  background: var(--card-bg-2);
+  color: var(--text-secondary);
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.blog-lang span.active {
+  background: #2ea043;
+  border-color: #2ea043;
+  color: #ffffff;
+}
+
+.blog-body {
+  display: grid;
+  gap: 14px;
+}
+
+.blog-music-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card-bg);
+  overflow: hidden;
+  max-width: 760px;
+}
+
+.blog-music-head {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blog-music-content {
+  padding: 10px;
+  display: flex;
+  gap: 12px;
+}
+
+.blog-music-content img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.blog-track {
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.blog-artist {
+  font-size: 17px;
+  color: var(--text-secondary);
+}
+
+.blog-actions {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.blog-btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 6px 16px;
+  background: #f43f5e;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.blog-link {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.blog-hero {
+  width: 100%;
+  max-height: 440px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.blog-body p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.blog-timeline {
+  position: relative;
+  padding-left: 6px;
+  display: grid;
+  gap: 4px;
+}
+
+.blog-timeline::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--border-light);
+}
+
+.blog-timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 8px 6px 2px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.blog-timeline-item:hover {
+  background: var(--card-bg-2);
+}
+
+.blog-timeline-node {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--card-bg);
+  margin-top: 5px;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.blog-timeline-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  text-align: left;
+}
+
+.blog-timeline-text b {
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.blog-timeline-text small {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.hobbies-explorer .blog-timeline-item.active {
+  background: rgba(46, 160, 67, 0.12);
+}
+
+.hobbies-explorer .blog-timeline-item.active .blog-timeline-node {
+  border-color: #2ea043;
+  background: #2ea043;
+  box-shadow: 0 0 0 2px rgba(46, 160, 67, 0.18);
+}
+
+body.dark .blog-timeline::before {
+  background: #2d3a4a;
+}
+
+body.dark .hobbies-explorer .blog-timeline-item.active {
+  background: rgba(63, 185, 80, 0.18);
+}
+
+body.dark .hobbies-explorer .blog-timeline-item.active .blog-timeline-node {
+  border-color: #3fb950;
+  background: #3fb950;
+  box-shadow: 0 0 0 2px rgba(63, 185, 80, 0.2);
+}
+
+@media (max-width: 820px) {
+  .blog-music-content {
+    flex-direction: column;
+  }
+
+  .blog-track {
+    font-size: 22px;
+  }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hobbies | Portfolio</title>
+  <title>Blog | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/variables.css">
@@ -25,54 +25,83 @@
         <a class="nav-link" href="index.html"><i class="bi bi-book"></i>Overview</a>
         <a class="nav-link" href="projects.html"><i class="bi bi-folder2-open"></i>Projects</a>
         <a class="nav-link" href="resume.html"><i class="bi bi-file-earmark-person"></i>Resume</a>
-        <a class="nav-link active" href="hobbies.html"><i class="bi bi-stars"></i>Hobbies</a>
-        <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle theme">+</button>
+        <a class="nav-link active" href="hobbies.html"><i class="bi bi-journal-richtext"></i>Blog</a>
+        <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
       </div>
     </div>
   </nav>
 
-  <main class="page">
-    <div class="main-layout">
-      <div class="panels-container">
-        <section class="panel panel-col-mid" style="flex: 1;">
-          <div class="panel-header">
-            <h2>Hobbies</h2>
-          </div>
-          <div class="panel-body">
-            <div class="news-item">
-              <div class="news-dot-col">
-                <div class="news-dot"></div>
-                <div class="news-line"></div>
-              </div>
-              <div class="news-body">
-                <div class="news-date">Creative</div>
-                <div class="news-text">Building personal side projects and exploring new UI ideas.</div>
-              </div>
-            </div>
-
-            <div class="news-item">
-              <div class="news-dot-col">
-                <div class="news-dot"></div>
-                <div class="news-line"></div>
-              </div>
-              <div class="news-body">
-                <div class="news-date">Learning</div>
-                <div class="news-text">Practicing coding interview problems and studying system design.</div>
-              </div>
-            </div>
-
-            <div class="news-item">
-              <div class="news-dot-col">
-                <div class="news-dot"></div>
-              </div>
-              <div class="news-body">
-                <div class="news-date">Life</div>
-                <div class="news-text">Trying to improve my sleep routine and stay active each week.</div>
-              </div>
+  <main class="projects-page pexp hobbies-explorer blog-page">
+    <div class="projects-shell pexp-shell">
+      <aside class="panel pexp-side">
+        <div class="panel-header"><h2>Blog Entries</h2></div>
+        <div class="panel-body pexp-side-body">
+          <div class="side-section">
+            <div class="side-title">Recent</div>
+            <div class="blog-timeline">
+              <button class="project-nav-item side-item blog-timeline-item active" type="button">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>About You</b>
+                  <small>Jan 19, 2026</small>
+                </span>
+              </button>
+              <button class="project-nav-item side-item blog-timeline-item" type="button">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>Point of View</b>
+                  <small>Dec 28, 2025</small>
+                </span>
+              </button>
+              <button class="project-nav-item side-item blog-timeline-item" type="button">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>Autumn Twilight</b>
+                  <small>Oct 22, 2025</small>
+                </span>
+              </button>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </aside>
+
+      <section class="panel blog-panel">
+        <div class="panel-header blog-head">
+          <div class="blog-head-left">
+            <h2>About You</h2>
+            <div class="blog-date">Monday, January 19, 2026</div>
+          </div>
+        </div>
+
+        <div class="panel-body blog-body">
+          <div class="blog-music-card">
+            <div class="blog-music-head"><i class="bi bi-music-note-beamed"></i>Music</div>
+            <div class="blog-music-content">
+              <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=320&q=80" alt="Album art" loading="lazy" />
+              <div class="blog-music-meta">
+                <div class="blog-track">About You</div>
+                <div class="blog-artist">The 1975</div>
+                <div class="blog-actions">
+                  <a href="#" class="blog-btn">Play</a>
+                  <a href="#" class="blog-link">View in Apple Music</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <img class="blog-hero" src="https://images.unsplash.com/photo-1516431883659-655d41c09bf9?auto=format&fit=crop&w=1600&q=80" alt="Snow scene" loading="lazy" />
+
+          <p>
+            Stargate SG-1 S03E06 is probably one of my favorite episodes so far. Imagine fleeing
+            to an alternate reality to escape your own, ravaged by a plague you are unable to
+            fight against and which has decimated your world, your family, your friends, and your love.
+          </p>
+          <p>
+            Outside of coding, I keep a small blog like this to capture moments, songs, and scenes
+            that make a week memorable. It helps me slow down and keep a creative rhythm.
+          </p>
+        </div>
+      </section>
     </div>
   </main>
 
