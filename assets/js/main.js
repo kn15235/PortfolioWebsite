@@ -344,6 +344,7 @@ function initHobbiesExplorer() {
   const blogPanel = root.querySelector(".blog-panel");
   const titleEl = root.querySelector("#blogTitle");
   const dateEl = root.querySelector("#blogDate");
+  const tagsEl = root.querySelector("#blogMetaTags");
   const heroEl = root.querySelector("#blogHero");
   const p1El = root.querySelector("#blogP1");
   const p2El = root.querySelector("#blogP2");
@@ -354,6 +355,7 @@ function initHobbiesExplorer() {
     "about-you": {
       title: "About You",
       date: "Monday, January 19, 2026",
+      tags: ["featured", "music", "reflection"],
       track: "About You",
       artist: "The 1975",
       image:
@@ -366,6 +368,7 @@ function initHobbiesExplorer() {
     "point-of-view": {
       title: "Point of View",
       date: "Sunday, December 28, 2025",
+      tags: ["journal", "late-night", "mindset"],
       track: "Nights",
       artist: "Frank Ocean",
       image:
@@ -378,6 +381,7 @@ function initHobbiesExplorer() {
     "autumn-twilight": {
       title: "Autumn Twilight",
       date: "Wednesday, October 22, 2025",
+      tags: ["seasonal", "autumn", "photo-note"],
       track: "Sweater Weather",
       artist: "The Neighbourhood",
       image:
@@ -394,6 +398,11 @@ function initHobbiesExplorer() {
     if (!item || !titleEl || !dateEl || !heroEl || !p1El || !p2El || !trackEl || !artistEl) return;
     titleEl.textContent = item.title;
     dateEl.textContent = item.date;
+    if (tagsEl) {
+      tagsEl.innerHTML = (item.tags || [])
+        .map((tag) => `<span class="pexp-tag">${tag}</span>`)
+        .join("");
+    }
     trackEl.textContent = item.track;
     artistEl.textContent = item.artist;
     heroEl.src = item.image;
