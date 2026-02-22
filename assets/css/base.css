@@ -14,5 +14,4 @@ body {
 a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-hover); text-decoration: underline; }
 
-.page { display: none; padding-top: 58px; }
-.page.active { display: block; }
+.page { padding-top: 58px; }

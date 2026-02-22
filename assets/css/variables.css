@@ -5,10 +5,10 @@
   --success:       #2da44e;
   --danger:        #cf222e;
 
-  --bg:            #ffffff;
-  --bg-nav:        #ffffff;
+  --bg:            #f6f8fa;
+  --bg-nav:        #f6f8fa;
   --card-bg:       #ffffff;
-  --card-bg-2:     #f6f8fa;
+  --card-bg-2:     #f1f3f5;
 
   --border:        #d0d7de;
   --border-light:  #d8dee4;
@@ -16,6 +16,24 @@
   --text-primary:  #24292f;
   --text-secondary:#57606a;
   --text-muted:    #6e7781;
+
+  --panel-head-bg: #f6f8fa;
+  --panel-head-text:#24292f;
+
+  --topbar-bg:              linear-gradient(180deg, #f6f8fa 0%, #eef1f4 100%);
+  --topbar-border:          #d0d7de;
+  --brand-mark-bg:          #ffffff;
+  --brand-mark-border:      #d0d7de;
+  --brand-mark-text:        #24292f;
+  --brand-name-color:       #24292f;
+  --nav-link-color:         #57606a;
+  --nav-link-hover-bg:      #eaeef2;
+  --nav-link-hover-text:    #24292f;
+  --nav-link-active-text:   #24292f;
+  --nav-link-active-line:   #2ea043;
+  --theme-btn-bg:           #f6f8fa;
+  --theme-btn-border:       #d0d7de;
+  --theme-btn-text:         #24292f;
 
   --shadow:        none;
   --radius:        6px;
@@ -33,7 +51,7 @@ body.dark {
   --bg:            #0d1117;
   --bg-nav:        #0d1117;
   --card-bg:       #161b22;
-  --card-bg-2:     #0d1117;
+  --card-bg-2:     #21262d;
 
   --border:        #30363d;
   --border-light:  #21262d;
@@ -41,6 +59,24 @@ body.dark {
   --text-primary:  #e6edf3;
   --text-secondary:#8b949e;
   --text-muted:    #7d8590;
+
+  --panel-head-bg: #21262d;
+  --panel-head-text:#e6edf3;
+
+  --topbar-bg:              linear-gradient(180deg, #0d1117 0%, #0b1016 100%);
+  --topbar-border:          #30363d;
+  --brand-mark-bg:          #0d1117;
+  --brand-mark-border:      #30363d;
+  --brand-mark-text:        #e6edf3;
+  --brand-name-color:       #e6edf3;
+  --nav-link-color:         #8b949e;
+  --nav-link-hover-bg:      #21262d;
+  --nav-link-hover-text:    #f0f6fc;
+  --nav-link-active-text:   #f0f6fc;
+  --nav-link-active-line:   #3fb950;
+  --theme-btn-bg:           #21262d;
+  --theme-btn-border:       #30363d;
+  --theme-btn-text:         #e6edf3;
 
   --shadow:        none;
 }
