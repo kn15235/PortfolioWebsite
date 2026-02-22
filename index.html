@@ -8,12 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/variables.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/sections.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
-  href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
   <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
 
 </head>
@@ -23,16 +24,16 @@
   <nav class="topbar">
     <div class="topbar-inner">
 
-      <a class="brand" href="#home">
+      <a class="brand" href="index.html">
         <span class="brand-mark">🍀</span>
-        <span class="brand-name"> Welcome to my website! :D </span>
+        <span class="brand-name">Welcome to my website! :D</span>
       </a>
 
       <div class="toplinks">
-        <button class="nav-link active" data-page="home">Overview</button>
-        <button class="nav-link" data-page="projects">Projects</button>
-        <button class="nav-link" data-page="resume">Resume</button>
-        <button class="nav-link" data-page="hobbies">Hobbies</button>
+        <a class="nav-link active" href="index.html"><i class="bi bi-book"></i>Overview</a>
+        <a class="nav-link" href="projects.html"><i class="bi bi-folder2-open"></i>Projects</a>
+        <a class="nav-link" href="resume.html"><i class="bi bi-file-earmark-person"></i>Resume</a>
+        <a class="nav-link" href="hobbies.html"><i class="bi bi-stars"></i>Hobbies</a>
 
         <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle theme">+</button>
       </div>
@@ -42,7 +43,7 @@
 
 
   <!-- home page-->
-  <div class="page active" id="page-home">
+  <div class="page active overview-page" id="page-home">
 
     <!-- Header Banner -->
     <div class="header-banner"></div>
@@ -76,16 +77,18 @@
       <div class="gh-bio">
         Greetings! I am a 3rd year Computer Engineering & Computer Science student at California State University, Long Beach!
       </div>
-
       <div class="gh-links">
-        <a class="gh-link" href="mailto:youremail@example.com">
-           🍀 knguyen15235@example.com
+        <a class="gh-link" href="mailto:knguyen15235@gmail.com">
+          <i class="bi bi-envelope"></i>
+          <span>knguyen15235@gmail.com</span>
         </a>
-        <a class="gh-link" href="https://github.com/yourusername" target="_blank">
-           🍀 github.com/kn15235
+        <a class="gh-link" href="https://github.com/kn15235" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-github"></i>
+          <span>github.com/kn15235</span>
         </a>
-        <a class="gh-link" href="https://linkedin.com/in/yourusername" target="_blank">
-           🍀 linkedin.com/in/kn15235
+        <a class="gh-link" href="https://linkedin.com/in/kn15235" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-linkedin"></i>
+          <span>in/kn15235</span>
         </a>
       </div>
 
@@ -175,27 +178,26 @@
           </div>
 
           <!-- GitHub Contributions -->
-          <div class="ghcal-wrap">
-            <div class="ghcal-top">
-              <div class="ghcal-title">GitHub contributions</div>
-            </div>
+          <div class="panel panel-ghcal">
+            <div class="panel-header"><h2>GitHub contributions</h2></div>
+            <div class="panel-body ghcal-body">
+              <div class="ghcal-card">
+                <img
+                  class="ghcal-img"
+                  src="https://ghchart.rshah.org/216e39/kn15235"
+                  alt="GitHub contribution chart"
+                  loading="lazy"
+                />
 
-            <div class="ghcal-card">
-              <img
-                class="ghcal-img"
-                src="https://ghchart.rshah.org/216e39/kn15235"
-                alt="GitHub contribution chart"
-                loading="lazy"
-              />
-
-              <div class="ghcal-legend">
-                <span>Less</span>
-                <span class="sq s0"></span>
-                <span class="sq s1"></span>
-                <span class="sq s2"></span>
-                <span class="sq s3"></span>
-                <span class="sq s4"></span>
-                <span>More</span>
+                <div class="ghcal-legend">
+                  <span>Less</span>
+                  <span class="sq s0"></span>
+                  <span class="sq s1"></span>
+                  <span class="sq s2"></span>
+                  <span class="sq s3"></span>
+                  <span class="sq s4"></span>
+                  <span>More</span>
+                </div>
               </div>
             </div>
           </div>
@@ -301,50 +303,22 @@
     </div> <!-- /.main-layout -->
   </div> <!-- /#page-home -->
 
-
-  <!-- Other Pages -->
-  <div class="page" id="page-publications">
-    <div class="page-content">
-      <h1>Projects</h1>
-      <p>Coming soon.</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        &copy; 2026 Your Name. All rights reserved.
+      </div>
+      <div class="footer-right">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <span class="footer-dot">&middot;</span>
+        <span>Built with HTML, CSS &amp; JS</span>
+      </div>
     </div>
-  </div>
-
-  <div class="page" id="page-projects">
-    <div class="page-content">
-      <h1>Resume</h1>
-      <p>Coming soon.</p>
-    </div>
-  </div>
-
-  <div class="page" id="page-teaching">
-    <div class="page-content">
-      <h1>Hobbies</h1>
-      <p>Coming soon.</p>
-    </div>
-  </div>
+  </footer>
 
   <script src="assets/js/main.js"></script>
 </body>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <div class="footer-left">
-      © 2026 Your Name. All rights reserved.
-    </div>
-
-    <div class="footer-right">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-      <span class="footer-dot">·</span>
-      <span>Built with HTML, CSS & JS</span>
-    </div>
-
-  </div>
-</footer>
-
 </html>
-
 
