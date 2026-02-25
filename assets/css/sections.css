@@ -42,6 +42,14 @@
   white-space: nowrap;
 }
 
+#tab-work .exp-date,
+#tab-education .exp-date {
+  font-weight: 700;
+  color: #1f883d;
+  border-color: rgba(31, 136, 61, 0.35);
+  background: rgba(31, 136, 61, 0.12);
+}
+
 .exp-role { font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 5px; }
 .exp-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.45; }
 
@@ -74,6 +82,11 @@
   padding: 7px 10px;
 }
 
+body:not(.dark) .overview-page .panel-header {
+  background: #e9edf2;
+  border-bottom-color: #d2d9e1;
+}
+
 .overview-page .panel-header h2,
 .overview-page .panel-header h3 {
   font-size: 12px;
@@ -87,6 +100,26 @@
 .overview-page .exp-header .tab-buttons {
   padding: 1px;
   gap: 1px;
+}
+
+body:not(.dark) .overview-page .exp-header .tab-buttons {
+  background: #e4e9ef;
+  border-color: #d2d9e1;
+}
+
+body:not(.dark) .projects-page .panel-header {
+  background: #e3e8ee;
+  border-bottom-color: #c8d1db;
+}
+
+body:not(.dark) .projects-page .proj-bar {
+  background: #e3e8ee;
+  border-bottom-color: #c8d1db;
+}
+
+body:not(.dark) .blog-page .blog-music-head {
+  background: #e3e8ee;
+  border-bottom-color: #c8d1db;
 }
 
 .overview-page .exp-header .tab-btn {

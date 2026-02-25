@@ -52,6 +52,14 @@
     width: clamp(110px, 24vw, 150px);
   }
 
+  .profile-status {
+    right: -58px;
+    bottom: 10px;
+    height: 34px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+
   .panels-container {
     min-height: 0;
     height: auto;
@@ -144,6 +152,18 @@
 
   .profile-pic-row {
     margin-top: -64px;
+  }
+
+  .profile-status {
+    right: -14px;
+    bottom: -8px;
+    width: 34px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .profile-status span {
+    display: none;
   }
 
   .profile-pic-spacer {

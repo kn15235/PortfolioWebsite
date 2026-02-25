@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+<body class="dark">
   <!-- navigation bar -->
   <nav class="topbar">
     <div class="topbar-inner">
@@ -32,8 +32,8 @@
         <a class="nav-link" href="projects.html"><i class="bi bi-folder2-open"></i>Projects</a>
         <a class="nav-link" href="resume.html"><i class="bi bi-file-earmark-person"></i>Resume</a>
         <a class="nav-link" href="hobbies.html"><i class="bi bi-journal-richtext"></i>Blog</a>
+        <a class="nav-link nav-link-danger" href="do-not-click.html">Do Not Click</a>
 
-        <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
       </div>
 
     </div>
@@ -52,10 +52,14 @@
       <!-- Profile Pic Row -->
       <div class="profile-pic-row">
         <div class="profile-pic-area">
-          <div class="profile-pic-wrapper">
-            <!-- Replace placeholder with your photo -->
-            <!-- <img src="assets/images/profile.jpg" alt="Profile" /> -->
-            <div class="profile-pic-placeholder">👤</div>
+          <div class="profile-pic-stack">
+            <div class="profile-pic-wrapper">
+              <img class="profile-img-default" src="assets/img/profile.jpg" alt="Profile photo" />
+              <img class="profile-img-hover" src="assets/img/profile_zoom.png" alt="Profile photo zoomed" />
+            </div>
+            <button class="profile-status" type="button" aria-label="Profile status">
+              <span>Hello World!!!</span>
+            </button>
           </div>
         </div>
         <div class="profile-pic-spacer"></div>
