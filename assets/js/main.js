@@ -2,7 +2,7 @@ function initLoadingOverlay() {
   const pretext = "One moment please...";
   const questionText = "Are you sure you want to visit Kristine's site?";
   const typeDelayMs = 34;
-  const preQuestionPauseMs = 3000;
+  const preQuestionPauseMs = 1700;
   const overlay = document.createElement("div");
   overlay.className = "loading-overlay";
   overlay.innerHTML = `
