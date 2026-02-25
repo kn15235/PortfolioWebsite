@@ -1,3 +1,56 @@
+function initLoadingOverlay() {
+  const pretext = "One moment please...";
+  const questionText = "Are you sure you want to visit Kristine's site?";
+  const typeDelayMs = 34;
+  const preQuestionPauseMs = 3000;
+  const overlay = document.createElement("div");
+  overlay.className = "loading-overlay";
+  overlay.innerHTML = `
+    <div class="loading-overlay-inner">
+      <p class="loading-pretext" aria-live="polite"></p>
+      <img class="loading-gif" src="assets/img/loading.gif" alt="Loading" />
+      <p class="loading-text" aria-live="polite"></p>
+      <button class="loading-continue" type="button">Yes, continue!</button>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  const pretextEl = overlay.querySelector(".loading-pretext");
+  const questionEl = overlay.querySelector(".loading-text");
+  const continueBtn = overlay.querySelector(".loading-continue");
+  const typeText = (el, text, done) => {
+    if (!el) return;
+    let i = 0;
+    el.classList.add("typing");
+    const tick = () => {
+      el.textContent = text.slice(0, i);
+      if (i < text.length) {
+        i += 1;
+        window.setTimeout(tick, typeDelayMs);
+        return;
+      }
+      el.classList.remove("typing");
+      done?.();
+    };
+    tick();
+  };
+
+  typeText(pretextEl, pretext, () => {
+    window.setTimeout(() => {
+      typeText(questionEl, questionText, () => {
+        continueBtn?.classList.add("is-ready");
+      });
+    }, preQuestionPauseMs);
+  });
+
+  continueBtn?.addEventListener("click", () => {
+    sessionStorage.setItem("initialSiteLoaderShown", "1");
+    overlay.classList.add("is-hidden");
+    window.setTimeout(() => overlay.remove(), 260);
+  });
+}
+
 // Work / Education Tabs
 function initExpTabs() {
   document.querySelectorAll(".panel-exp").forEach((panel) => {
@@ -475,6 +528,10 @@ function initPageNavigationTransition() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const loaderKey = "initialSiteLoaderShown";
+  if (!sessionStorage.getItem(loaderKey)) {
+    initLoadingOverlay();
+  }
   initExpTabs();
   initProjectsExplorer();
   initHobbiesExplorer();
