@@ -10,6 +10,9 @@ function initExpTabs() {
 
         buttons.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
+        btn.classList.remove("select-pop");
+        void btn.offsetWidth;
+        btn.classList.add("select-pop");
 
         contents.forEach((c) => c.classList.remove("active"));
         const targetContent = panel.querySelector(`#tab-${target}`);
@@ -21,35 +24,6 @@ function initExpTabs() {
         }
       });
     });
-  });
-}
-
-// Dark mode
-function initThemeToggle() {
-  const btn = document.getElementById("themeToggle");
-  if (!btn) return;
-
-  const setThemeIcon = (animate = false) => {
-    const isDark = document.body.classList.contains("dark");
-    btn.innerHTML = isDark
-      ? '<i class="bi bi-sun-fill"></i>'
-      : '<i class="bi bi-moon-stars-fill"></i>';
-
-    if (animate) {
-      btn.classList.remove("icon-anim");
-      void btn.offsetWidth;
-      btn.classList.add("icon-anim");
-    }
-  };
-
-  const saved = localStorage.getItem("theme");
-  if (saved === "dark") document.body.classList.add("dark");
-  setThemeIcon(false);
-
-  btn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-    setThemeIcon(true);
   });
 }
 
@@ -502,7 +476,6 @@ function initPageNavigationTransition() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initExpTabs();
-  initThemeToggle();
   initProjectsExplorer();
   initHobbiesExplorer();
   initSiteAnimations();

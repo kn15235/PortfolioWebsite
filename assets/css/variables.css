@@ -20,20 +20,20 @@
   --panel-head-bg: #f6f8fa;
   --panel-head-text:#24292f;
 
-  --topbar-bg:              linear-gradient(180deg, #f6f8fa 0%, #eef1f4 100%);
-  --topbar-border:          #d0d7de;
-  --brand-mark-bg:          #ffffff;
-  --brand-mark-border:      #d0d7de;
-  --brand-mark-text:        #24292f;
-  --brand-name-color:       #24292f;
-  --nav-link-color:         #57606a;
-  --nav-link-hover-bg:      #eaeef2;
-  --nav-link-hover-text:    #24292f;
-  --nav-link-active-text:   #24292f;
+  --topbar-bg:              linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+  --topbar-border:          #30363d;
+  --brand-mark-bg:          #0d1117;
+  --brand-mark-border:      #30363d;
+  --brand-mark-text:        #e6edf3;
+  --brand-name-color:       #e6edf3;
+  --nav-link-color:         #8b949e;
+  --nav-link-hover-bg:      #21262d;
+  --nav-link-hover-text:    #f0f6fc;
+  --nav-link-active-text:   #f0f6fc;
   --nav-link-active-line:   #2ea043;
-  --theme-btn-bg:           #f6f8fa;
-  --theme-btn-border:       #d0d7de;
-  --theme-btn-text:         #24292f;
+  --theme-btn-bg:           #21262d;
+  --theme-btn-border:       #30363d;
+  --theme-btn-text:         #e6edf3;
 
   --shadow:        none;
   --radius:        6px;
