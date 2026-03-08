@@ -1256,3 +1256,27 @@ body.dark .hobbies-explorer .blog-timeline-item.active .blog-timeline-node {
     font-size: 22px;
   }
 }
+
+.exp-logo-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 5px; /* slightly rounded square */
+}
+
+
+.news-thumb {
+  width: 220px;
+  height: auto;            /* let ratio control height */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 8px auto; /* centers horizontally */
+}
+
+.gh-now-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
