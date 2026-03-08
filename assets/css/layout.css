@@ -67,6 +67,7 @@
   border-radius: 999px;
   background: rgba(248, 81, 73, 0.16);
   color: #ffb3ad;
+  animation: danger-blink 1s steps(2, end) infinite;
 }
 
 .nav-link.nav-link-danger::after {
@@ -99,6 +100,15 @@
 
 .nav-link.nav-link-danger.active::after {
   display: none;
+}
+
+@keyframes danger-blink {
+  0%, 48% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0.45;
+  }
 }
 
 .theme-btn {
