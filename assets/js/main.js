@@ -10,7 +10,7 @@ function initLoadingOverlay() {
       <p class="loading-pretext" aria-live="polite"></p>
       <img class="loading-gif" src="assets/img/loading.gif" alt="Loading" />
       <p class="loading-text" aria-live="polite"></p>
-      <button class="loading-continue" type="button">Yes, continue!</button>
+      <button class="loading-continue" type="button">Continue</button>
     </div>
   `;
 
