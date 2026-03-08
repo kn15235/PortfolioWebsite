@@ -85,37 +85,32 @@ function initProjectsExplorer() {
   if (!root) return;
 
   const projectData = {
-    "test-project": {
-      date: "Tuesday, March 3, 2026",
-      title: "Test Project",
-      subtitle: "Placeholder project entry for testing the projects section.",
+    "portfolio-website": {
+      date: "Saturday, March 7, 2026",
+      title: "Portfolio Website",
+      subtitle: " My first personal portfolio built with HTML, CSS, and JavaScript!",
       about: [
-        "This is a test project entry used to verify the project explorer layout.",
-        "The content is intentionally minimal and will be replaced later.",
-        "All project panels should render correctly with this single item."
+        "Designed and built a multi-page personal website.",
+        "Includes overview, projects explorer, resume viewer, and blog page.",
+        "Added custom styling, animations, and responsive layout."
       ],
-      tags: ["test"],
-      repo: { label: "github.com/yourusername/test-project", url: "https://github.com/yourusername" },
-      docs: { label: "Test docs", url: "https://github.com/yourusername" },
-      lang: "Test Stack",
-      commits: "1",
-      stars: "0",
-      created: "Mar 3, 2026",
-      updated: "Mar 3, 2026",
+      tags: ["html", "css", "javascript", "portfolio"],
+      repo: { label: "github.com/kn15235/PortfolioWebsite", url: "https://github.com/kn15235/PortfolioWebsite" },
+      docs: { label: "Live Site", url: "#" },
+      lang: "HTML / CSS / JavaScript",
+      commits: "20+",
+      stars: "TBD",
+      created: "2026",
+      updated: "2026",
       comment:
-        "This test entry is here to validate UI structure before real project details are added.",
+        "This is a project where I share my work, experiments, and design updates all with in one place! I will be updating more later in my free time",
       examples: [
         {
-          title: "Test Preview",
+          title: "Homepage Preview",
           type: "image",
-          src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80",
-          alt: "Test project preview",
-          caption: "Placeholder preview image for testing."
-        },
-        {
-          title: "Test Snippet",
-          type: "code",
-          code: "const status = 'test';\nconsole.log(status);"
+          src: "assets/img/previewpage.png",
+          alt: "Portfolio homepage preview",
+          caption: "Overview page with profile, experience, and highlights."
         }
       ]
     }
@@ -223,7 +218,7 @@ function initProjectsExplorer() {
     });
   }
 
-  renderProject("test-project");
+  renderProject("portfolio-website");
 }
 
 function initHobbiesExplorer() {
@@ -239,28 +234,24 @@ function initHobbiesExplorer() {
   const heroEl = root.querySelector("#blogHero");
   const p1El = root.querySelector("#blogP1");
   const p2El = root.querySelector("#blogP2");
-  const trackEl = root.querySelector("#blogTrack");
-  const artistEl = root.querySelector("#blogArtist");
 
   const blogData = {
     "test-blog": {
-      title: "Test Blog",
-      date: "Tuesday, March 3, 2026",
-      tags: ["test"],
-      track: "Test Track",
-      artist: "Test Artist",
+      title: "testing 123",
+      date: "Friday, March 6, 2026",
+      tags: ["test", "blog", "placeholder"],
       image:
         "https://images.unsplash.com/photo-1516431883659-655d41c09bf9?auto=format&fit=crop&w=1600&q=80",
       p1:
-        "This is a test blog entry used to verify the layout and blog rendering behavior.",
+        "This is a test blog entry, I will update this with real content later!",
       p2:
-        "Additional placeholder text for testing. This section will be replaced with real content later."
+        "Additional placeholder text for testing. This section will be replaced with real content later"
     }
   };
 
   const renderBlog = (key) => {
     const item = blogData[key];
-    if (!item || !titleEl || !dateEl || !heroEl || !p1El || !p2El || !trackEl || !artistEl) return;
+    if (!item || !titleEl || !dateEl || !heroEl || !p1El || !p2El) return;
     titleEl.textContent = item.title;
     dateEl.textContent = item.date;
     if (tagsEl) {
@@ -268,8 +259,6 @@ function initHobbiesExplorer() {
         .map((tag) => `<span class="pexp-tag">${tag}</span>`)
         .join("");
     }
-    trackEl.textContent = item.track;
-    artistEl.textContent = item.artist;
     heroEl.src = item.image;
     heroEl.alt = item.title;
     p1El.textContent = item.p1;
