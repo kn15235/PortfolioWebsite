@@ -1,16 +1,28 @@
 function initLoadingOverlay() {
   const pretext = "One moment please...";
-  const questionText = "Are you sure you want to visit Kristine's site?";
+  const questionText = "Are you sure you want to visit the site?";
   const typeDelayMs = 34;
   const preQuestionPauseMs = 1700;
   const overlay = document.createElement("div");
   overlay.className = "loading-overlay";
   overlay.innerHTML = `
     <div class="loading-overlay-inner">
-      <p class="loading-pretext" aria-live="polite"></p>
-      <img class="loading-gif" src="assets/img/loading.gif" alt="Loading" />
-      <p class="loading-text" aria-live="polite"></p>
-      <button class="loading-continue" type="button">Continue</button>
+      <div class="loading-terminal" role="presentation">
+        <div class="loading-terminal-bar">
+          <span class="loading-terminal-dots" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <p class="loading-terminal-title">kristinen-terminal.exe</p>
+        </div>
+        <div class="loading-terminal-body">
+          <p class="loading-pretext" aria-live="polite"></p>
+          <img class="loading-gif" src="assets/img/loading.gif" alt="Loading" />
+          <p class="loading-text" aria-live="polite"></p>
+          <button class="loading-continue" type="button">Continue</button>
+        </div>
+      </div>
     </div>
   `;
 

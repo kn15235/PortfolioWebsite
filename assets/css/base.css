@@ -29,32 +29,89 @@ body {
 }
 
 .loading-overlay-inner {
+  width: min(92vw, 720px);
+}
+
+.loading-terminal {
+  border: 1px solid rgba(139, 148, 158, 0.35);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #11161d;
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(240, 246, 252, 0.03) inset;
+}
+
+.loading-terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: #1c2430;
+  border-bottom: 1px solid rgba(139, 148, 158, 0.2);
+}
+
+.loading-terminal-dots {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.loading-terminal-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.loading-terminal-dots span:nth-child(1) { background: #ff5f57; }
+.loading-terminal-dots span:nth-child(2) { background: #febc2e; }
+.loading-terminal-dots span:nth-child(3) { background: #28c840; }
+
+.loading-terminal-title {
+  margin: 0;
+  font-family: "IBM Plex Mono", "Fira Code", monospace;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8b949e;
+}
+
+.loading-terminal-body {
   display: grid;
   justify-items: center;
-  gap: 12px;
+  gap: 14px;
+  padding: 28px 24px 24px;
   text-align: center;
 }
 
 .loading-pretext {
-  font-size: 24px;
+  font-family: "IBM Plex Mono", "Fira Code", monospace;
+  font-size: clamp(12px, 1.5vw, 13px);
   line-height: 1.2;
   color: #c9d1d9;
   font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   min-height: 1.2em;
 }
 
 .loading-gif {
-  width: 88px;
-  height: 88px;
+  width: 76px;
+  height: 76px;
   image-rendering: pixelated;
+  filter: drop-shadow(0 0 18px rgba(63, 185, 80, 0.16));
 }
 
 .loading-text {
-  font-size: 24px;
+  font-family: "IBM Plex Mono", "Fira Code", monospace;
+  font-size: clamp(12px, 1.5vw, 13px);
   line-height: 1.2;
   color: #c9d1d9;
   font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   min-height: 1.2em;
+  max-width: min(100%, 52ch);
+  text-wrap: balance;
 }
 
 .loading-pretext.typing::after,
@@ -71,12 +128,15 @@ body {
 
 .loading-continue {
   border: 1px solid #3fb950;
-  border-radius: 8px;
-  background: rgba(63, 185, 80, 0.2);
+  border-radius: 999px;
+  background: rgba(63, 185, 80, 0.14);
   color: #adf2c1;
-  font-size: 14px;
+  font-family: "IBM Plex Mono", "Fira Code", monospace;
+  font-size: 13px;
   font-weight: 700;
-  padding: 8px 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 16px;
   cursor: pointer;
   opacity: 0;
   transform: translateY(4px);
@@ -87,6 +147,27 @@ body {
 .loading-continue:hover {
   background: rgba(63, 185, 80, 0.3);
   border-color: #56d364;
+}
+
+@media (max-width: 520px) {
+  .loading-terminal-bar {
+    padding: 12px 14px;
+  }
+
+  .loading-terminal-title {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  .loading-terminal-body {
+    padding: 22px 16px 20px;
+    gap: 14px;
+  }
+
+  .loading-gif {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 .loading-continue.is-ready {
