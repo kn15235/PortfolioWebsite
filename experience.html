@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kristine N.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+<body class="dark">
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+      </a>
+      <div class="toplinks">
+        <a class="nav-link" href="index.html"><i class="bi bi-book"></i>Overview</a>
+        <a class="nav-link active" href="experience.html"><i class="bi bi-briefcase"></i>Experience</a>
+        <a class="nav-link" href="projects.html"><i class="bi bi-folder2-open"></i>Projects</a>
+        <a class="nav-link" href="hobbies.html"><i class="bi bi-journal-richtext"></i>Blog</a>
+        <a class="nav-link nav-link-danger" href="do-not-click.html">Do Not Click</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="experience-page experience-stories">
+    <div class="experience-shell pexp-shell experience-explorer">
+      <aside class="panel pexp-side experience-side">
+        <div class="panel-header"><h2>Experience</h2></div>
+        <div class="panel-body pexp-side-body">
+          <div class="side-section">
+            <div class="side-title">Work</div>
+            <div class="blog-timeline">
+              <button class="project-nav-item side-item blog-timeline-item experience-nav-item" type="button" data-exp="devsprite" data-tab="work">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>DevSprite.io</b>
+                  <small>Founder & Software Developer</small>
+                </span>
+              </button>
+              <button class="project-nav-item side-item blog-timeline-item experience-nav-item" type="button" data-exp="buildify" data-tab="work">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>Buildify</b>
+                  <small>Software Engineering Intern</small>
+                </span>
+              </button>
+              <button class="project-nav-item side-item blog-timeline-item experience-nav-item" type="button" data-exp="openai" data-tab="work">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>OpenAI</b>
+                  <small>ChatGPT Ambassador</small>
+                </span>
+              </button>
+              <button class="project-nav-item side-item blog-timeline-item experience-nav-item" type="button" data-exp="microsoft" data-tab="work">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>Microsoft</b>
+                  <small>Emerging Leader</small>
+                </span>
+              </button>
+              <button class="project-nav-item side-item blog-timeline-item experience-nav-item" type="button" data-exp="wic" data-tab="work">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>Women In Computing</b>
+                  <small>Webmaster Intern</small>
+                </span>
+              </button>
+              <button class="project-nav-item side-item blog-timeline-item experience-nav-item" type="button" data-exp="codecheck" data-tab="work">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>CodeCheck</b>
+                  <small>Software Engineering Intern</small>
+                </span>
+              </button>
+              <button class="project-nav-item side-item blog-timeline-item experience-nav-item" type="button" data-exp="oed" data-tab="work">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>Open Energy Dashboard</b>
+                  <small>Software Engineering Intern</small>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="side-section">
+            <div class="side-title">Education</div>
+            <div class="blog-timeline">
+              <button class="project-nav-item side-item blog-timeline-item experience-nav-item" type="button" data-exp="csulb" data-tab="education">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>CSU Long Beach</b>
+                  <small>B.S. CECS</small>
+                </span>
+              </button>
+              <button class="project-nav-item side-item blog-timeline-item experience-nav-item" type="button" data-exp="occ" data-tab="education">
+                <span class="blog-timeline-node"></span>
+                <span class="blog-timeline-text">
+                  <b>Orange Coast College</b>
+                  <small>A.S. Computer Science</small>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="panel panel-exp experience-main-panel">
+        <div class="panel-header exp-header">
+          <h2>Stories</h2>
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="work">Work</button>
+            <button class="tab-btn" data-tab="education">Education</button>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div class="experience-library active" id="experienceLibrary">
+            <div class="tab-content active" id="tab-work">
+              <div class="experience-preview-grid">
+                <button class="experience-card" type="button" data-exp="devsprite">
+                  <span class="experience-card-media">
+                    <img src="assets/img/devsprite-logo.png" alt="DevSprite preview" />
+                  </span>
+                  <span class="experience-card-body">
+                    <span class="experience-card-date">Mar 2026 - Present</span>
+                    <span class="experience-card-title">DevSprite.io</span>
+                    <span class="experience-card-role">Founder & Software Developer</span>
+                    <span class="experience-card-excerpt">Building a passion project that helps local businesses create a stronger online presence.</span>
+                  </span>
+                </button>
+
+                <button class="experience-card" type="button" data-exp="buildify">
+                  <span class="experience-card-media">
+                    <img src="assets/img/buildify-logo.png" alt="Buildify preview" />
+                  </span>
+                  <span class="experience-card-body">
+                    <span class="experience-card-date">Jan 2026 - Present</span>
+                    <span class="experience-card-title">Buildify</span>
+                    <span class="experience-card-role">Software Engineering Intern</span>
+                    <span class="experience-card-excerpt">Contributing on the Engineering Ops side while learning how product teams scale their internal systems.</span>
+                  </span>
+                </button>
+
+                <button class="experience-card" type="button" data-exp="openai">
+                  <span class="experience-card-media">
+                    <img src="assets/img/openai-logo.png" alt="OpenAI ambassador preview" />
+                  </span>
+                  <span class="experience-card-body">
+                    <span class="experience-card-date">Sept 2025 - Present</span>
+                    <span class="experience-card-title">OpenAI</span>
+                    <span class="experience-card-role">ChatGPT Ambassador</span>
+                    <span class="experience-card-excerpt">Leading conversations on campus about how AI can support learning, creativity, and student exploration.</span>
+                  </span>
+                </button>
+
+                <button class="experience-card" type="button" data-exp="microsoft">
+                  <span class="experience-card-media">
+                    <img src="assets/img/microsoft-logo.png" alt="Microsoft preview" />
+                  </span>
+                  <span class="experience-card-body">
+                    <span class="experience-card-date">Jul 2025 - Sept 2025</span>
+                    <span class="experience-card-title">Microsoft</span>
+                    <span class="experience-card-role">Emerging Leader (ELCSP)</span>
+                    <span class="experience-card-excerpt">Growing confidence, communication, and leadership through a security-focused student program.</span>
+                  </span>
+                </button>
+
+                <button class="experience-card" type="button" data-exp="wic">
+                  <span class="experience-card-media">
+                    <img src="assets/img/wic-logo.png" alt="WIC preview" />
+                  </span>
+                  <span class="experience-card-body">
+                    <span class="experience-card-date">Feb 2025 - May 2025</span>
+                    <span class="experience-card-title">Women In Computing</span>
+                    <span class="experience-card-role">Webmaster Intern</span>
+                    <span class="experience-card-excerpt">Supporting community visibility through web updates and social media storytelling.</span>
+                  </span>
+                </button>
+
+                <button class="experience-card" type="button" data-exp="codecheck">
+                  <span class="experience-card-media">
+                    <img src="assets/img/codeday-logo.png" alt="CodeCheck preview" />
+                  </span>
+                  <span class="experience-card-body">
+                    <span class="experience-card-date">Jun 2024 - Nov 2024</span>
+                    <span class="experience-card-title">CodeCheck (CodeDay)</span>
+                    <span class="experience-card-role">Software Engineering Intern</span>
+                    <span class="experience-card-excerpt">Working on open-source educational tooling with backend integration and deployment documentation.</span>
+                  </span>
+                </button>
+
+                <button class="experience-card" type="button" data-exp="oed">
+                  <span class="experience-card-media">
+                    <img src="assets/img/codeday-logo.png" alt="Open Energy Dashboard preview" />
+                  </span>
+                  <span class="experience-card-body">
+                    <span class="experience-card-date">Oct 2023 - Dec 2023</span>
+                    <span class="experience-card-title">Open Energy Dashboard</span>
+                    <span class="experience-card-role">Software Engineering Intern</span>
+                    <span class="experience-card-excerpt">Improving data accuracy, testing, and usability on a cross-institution open-source energy platform.</span>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="tab-content" id="tab-education">
+              <div class="experience-preview-grid">
+                <button class="experience-card" type="button" data-exp="csulb">
+                  <span class="experience-card-media">
+                    <img src="assets/img/csulongbeach-logo.png" alt="CSULB preview" />
+                  </span>
+                  <span class="experience-card-body">
+                    <span class="experience-card-date">Aug 2024 - Present</span>
+                    <span class="experience-card-title">California State University, Long Beach</span>
+                    <span class="experience-card-role">B.S. Computer Engineering & Computer Science</span>
+                    <span class="experience-card-excerpt">Deepening my foundation in software, systems, and engineering through hands-on coursework.</span>
+                  </span>
+                </button>
+
+                <button class="experience-card" type="button" data-exp="occ">
+                  <span class="experience-card-media">
+                    <img src="assets/img/occ-logo.png" alt="Orange Coast College preview" />
+                  </span>
+                  <span class="experience-card-body">
+                    <span class="experience-card-date">Jun 2022 - May 2024</span>
+                    <span class="experience-card-title">Orange Coast College</span>
+                    <span class="experience-card-role">A.S. Computer Science</span>
+                    <span class="experience-card-excerpt">Building the academic base that led me into engineering, programming, and problem solving.</span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <article class="experience-story-view" id="experienceStoryView" hidden>
+            <button class="experience-back-btn" id="experienceBackBtn" type="button">
+              <i class="bi bi-arrow-left"></i>
+              Back to all experiences
+            </button>
+
+            <div class="experience-story-shell">
+              <div class="experience-story-meta">
+                <div class="blog-date" id="experienceStoryDate">Mar 2026 - Present</div>
+                <div class="blog-head-tags pexp-tags" id="experienceStoryTags" aria-label="Experience story tags"></div>
+              </div>
+
+              <h1 class="experience-story-title" id="experienceStoryTitle">DevSprite.io</h1>
+
+              <img class="blog-hero experience-hero" id="experienceStoryHero" src="assets/img/devsprite-logo.png" alt="DevSprite story preview" loading="lazy" />
+
+              <div class="experience-story-copy">
+                <p id="experienceStoryP1">
+                  DevSprite.io is one of the projects closest to me because it combines technical problem solving with community impact.
+                </p>
+                <p id="experienceStoryP2">
+                  I wanted this work to feel less like a list entry and more like a story, so this page highlights the motivation, the hands-on work, and the lessons behind it.
+                </p>
+              </div>
+
+              <div class="experience-story-highlights">
+                <div class="panel-header experience-story-subhead"><h3>Highlights</h3></div>
+                <ul id="experienceStoryHighlights" class="experience-highlight-list"></ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">&copy; 2026 Kristine N.</div>
+      <div class="footer-right">
+        <a href="https://github.com/kn15235" target="_blank">GitHub</a>
+        <span class="footer-dot">&middot;</span>
+        <span>Built with HTML &amp; CSS</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
