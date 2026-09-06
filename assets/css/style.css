@@ -26,17 +26,17 @@ h1, .intro p { font-size: 16px; font-weight: 400; line-height: 1.8; margin: 0; }
 .scroll-cue { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-top: 26px; }
 .scroll-cue span { width: 23px; height: 23px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); transform: translateY(-6px) rotate(45deg); }
 .work { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; scroll-margin-top: 30px; }
-.project { position: relative; display: grid; place-items: center; aspect-ratio: 1.12; padding: 24px; background: var(--tile); border: 0; border-radius: 0; }
+.project { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; aspect-ratio: 1.12; padding: 24px 16px; background: var(--tile); border: 0; border-radius: 0; }
 .project img { width: 52%; max-width: 125px; height: auto; transition: transform .22s ease; }
-.project-label { position: absolute; bottom: 15px; left: 8px; right: 8px; font-size: 11px; color: #686868; opacity: 0; transform: translateY(4px); transition: opacity .2s ease, transform .2s ease; }
+.project-label { font-size: 13px; line-height: 1.4; color: #555; overflow-wrap: anywhere; }
 .project:hover img, .project:focus-visible img { transform: translateY(-6px) rotate(-4deg); }
-.project:hover .project-label, .project:focus-visible .project-label { opacity: 1; transform: none; }
 footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 36px 0 44px; font-size: 10px; }
 footer small { color: #777; font-size: inherit; }
 footer a { color: var(--accent); }
 .skip-link { position: absolute; top: -80px; left: 20px; padding: 12px; background: white; z-index: 2; }
 .skip-link:focus { top: 12px; }
-dialog { width: min(440px, calc(100% - 40px)); max-height: calc(100% - 40px); padding: 42px 36px; border: 0; color: var(--ink); text-align: center; }
+dialog { width: min(620px, calc(100% - 32px)); max-height: calc(100% - 32px); padding: 48px 0 0; overflow: hidden; border: 0; color: var(--ink); text-align: center; }
+.preview-content { max-height: calc(100dvh - 112px); overflow-y: auto; overscroll-behavior: contain; padding: 0 36px 32px; }
 dialog::backdrop { background: rgb(0 0 0 / 25%); }
 body:has(dialog[open]) { overflow: hidden; }
 .close { position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; border: 0; background: none; font-size: 25px; color: #777; }
@@ -44,6 +44,29 @@ dialog img { object-fit: contain; }
 .eyebrow { margin-top: 24px; color: #777; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
 dialog h2 { font-size: 22px; font-weight: 500; }
 #preview-description { font-size: 14px; line-height: 1.8; color: #666; }
+.experience-entry { text-align: left; padding: 22px 0; border-top: 1px solid #e8e8e8; overflow-wrap: anywhere; }
+.experience-entry h3 { margin: 0 0 8px; font-size: 16px; font-weight: 500; }
+.experience-entry p { margin: 8px 0 0; font-size: 14px; line-height: 1.75; color: #666; }
+.experience-entry .experience-meta { font-size: 12px; color: #777; }
+.experience-entry a { color: #895957; text-decoration: underline; text-underline-offset: 3px; }
+.entry-header { display: flex; align-items: flex-start; gap: 14px; }
+.entry-header > div { min-width: 0; }
+.organization-logo { width: 48px; height: 48px; flex: 0 0 48px; border-radius: 8px; background: #faf9f7; object-fit: contain; }
+.experience-entry .entry-organization { margin: 0; color: var(--ink); }
+.experience-entry h4 { margin: 24px 0 8px; font-size: 14px; font-weight: 600; }
+.tech-tags { display: flex; flex-wrap: wrap; gap: 7px; padding: 0; margin: 16px 0; list-style: none; }
+.tech-tags li { padding: 5px 10px; border-radius: 20px; background: #f3efeb; color: #716252; font-size: 11px; line-height: 1.5; }
+.entry-media { margin: 20px 0; min-width: 0; }
+.entry-media img { display: block; width: 100%; height: auto; border-radius: 5px; }
+.entry-media figcaption { margin-top: 8px; font-size: 12px; line-height: 1.6; color: #777; }
+.media-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.media-gallery .entry-media { margin: 12px 0; }
+.experience-entry .entry-links { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 18px; }
+.entry-list { padding-left: 20px; font-size: 14px; line-height: 1.8; color: #666; }
+.project-post h3 { margin-top: 8px; font-size: 20px; line-height: 1.4; }
+.stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 22px 14px; padding: 0; margin: 22px 0 4px; list-style: none; }
+.stack-grid li { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; font-size: 12px; line-height: 1.5; color: #666; }
+.stack-grid img { width: 48px; height: 48px; object-fit: contain; }
 @media (max-width: 600px) {
   .page { width: calc(100% - 36px); }
   .header { padding-top: 28px; gap: 12px; }
@@ -51,10 +74,11 @@ dialog h2 { font-size: 22px; font-weight: 500; }
   nav { gap: 14px; }
   .intro { padding: 65px 0 70px; }
   .work { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  .project { padding: 18px; }
-  .project-label { opacity: 1; transform: none; bottom: 10px; font-size: 10px; }
+  .project { padding: 18px 12px; gap: 12px; }
+  .project-label { font-size: 12px; }
+  .preview-content { padding: 0 22px 24px; }
+  .media-gallery { grid-template-columns: 1fr; }
 }
-@media (hover: none) { .project-label { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }

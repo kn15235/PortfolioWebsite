@@ -10,7 +10,7 @@
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#work">Skip to projects</a>
+  <a class="skip-link" href="#work">Skip to experience topics</a>
   <div class="page">
     <header class="header">
       <a class="wordmark" href="index.html">Kristine Nguyen</a>
@@ -27,37 +27,46 @@
         <img class="intro-drawing" src="assets/img/girl.svg" alt="main pfp" width="100" height="100">
         <h1 id="intro-title">Hi, I'm Kristine!</h1>
         <p>A little collection of things I've made.</p>
-        <a class="scroll-cue" href="#work" aria-label="Explore my projects"><span></span></a>
+        <a class="scroll-cue" href="#work" aria-label="Explore my experiences"><span></span></a>
       </section>
 
-      <!-- sample/plans on what to implement/add -->
-      <section class="work" id="work" aria-label="Selected projects">
-        <button class="project" type="button" data-title="Project 01" data-description="add what you made, why you made it, and what you learned." aria-label="Preview Project 01">
-          <img src="assets/img/whale.svg" alt="Blue whale drawing" width="120" height="120"><span class="project-label">Project 01</span>
+      <!-- Rename the topics here; edit their experience entries in the templates below. -->
+      <section class="work" id="work" aria-label="Experience topics">
+        <button class="project" type="button" data-content="work-experience" aria-haspopup="dialog" aria-controls="preview">
+          <img src="assets/img/whale.svg" alt="" width="120" height="120">
+          <span class="project-label">Experience</span>
         </button>
-        <button class="project" type="button" data-title="Project 02" data-description="replace this text with a short introduction to your work." aria-label="Preview Project 02">
-          <img src="assets/img/crab.svg" alt="Red crab drawing" width="120" height="120"><span class="project-label">Project 02</span>
+        <button class="project" type="button" data-content="leadership" aria-haspopup="dialog" aria-controls="preview">
+          <img src="assets/img/crab.svg" alt="" width="120" height="120">
+          <span class="project-label">Leadership</span>
         </button>
-        <button class="project" type="button" data-title="Project 03" data-description="share the idea behind it and the details you are proud of." aria-label="Preview Project 03">
-          <img src="assets/img/turtle.svg" alt="Green sea turtle drawing" width="120" height="120"><span class="project-label">Project 03</span>
+        <button class="project" type="button" data-content="education" aria-haspopup="dialog" aria-controls="preview">
+          <img src="assets/img/turtle.svg" alt="" width="120" height="120">
+          <span class="project-label">Education</span>
         </button>
-        <button class="project" type="button" data-title="Project 04" data-description="replace this text with the story of something you made." aria-label="Preview Project 04">
-          <img src="assets/img/octopus.svg" alt="Coral octopus drawing" width="120" height="120"><span class="project-label">Project 04</span>
+        <button class="project" type="button" data-content="projects" aria-haspopup="dialog" aria-controls="preview">
+          <img src="assets/img/octopus.svg" alt="" width="120" height="120">
+          <span class="project-label">Projects</span>
         </button>
-        <button class="project" type="button" data-title="Project 05" data-description="add a short overview of your process and the result." aria-label="Preview Project 05">
-          <img src="assets/img/shark.svg" alt="Blue shark drawing" width="120" height="120"><span class="project-label">Project 05</span>
+        <button class="project" type="button" data-content="tech-stacks" aria-haspopup="dialog" aria-controls="preview">
+          <img src="assets/img/shark.svg" alt="" width="120" height="120">
+          <span class="project-label">Tech Stacks</span>
         </button>
-        <button class="project" type="button" data-title="Project 06" data-description="introduce an experiment, a collaboration, or a favorite piece of work." aria-label="Preview Project 06">
-          <img src="assets/img/jellyfish.svg" alt="Lavender jellyfish drawing" width="120" height="120"><span class="project-label">Project 06</span>
+        <button class="project" type="button" data-content="interests" aria-haspopup="dialog" aria-controls="preview">
+          <img src="assets/img/jellyfish.svg" alt="" width="120" height="120">
+          <span class="project-label">Interests</span>
         </button>
-        <button class="project" type="button" data-title="Project 07" data-description="replace this text with a little background on your work." aria-label="Preview Project 07">
-          <img src="assets/img/starfish.svg" alt="Golden starfish drawing" width="120" height="120"><span class="project-label">Project 07</span>
+        <button class="project" type="button" data-content="hobbies" aria-haspopup="dialog" aria-controls="preview">
+          <img src="assets/img/starfish.svg" alt="" width="120" height="120">
+          <span class="project-label">Hobbies</span>
         </button>
-        <button class="project" type="button" data-title="Project 08" data-description="share something you enjoyed making or learning." aria-label="Preview Project 08">
-          <img src="assets/img/squid.svg" alt="Little cream squid drawing" width="120" height="120"><span class="project-label">Project 08</span>
+        <button class="project" type="button" data-content="cooking" aria-haspopup="dialog" aria-controls="preview">
+          <img src="assets/img/squid.svg" alt="" width="120" height="120">
+          <span class="project-label">Cooking</span>
         </button>
-        <button class="project" type="button" data-title="Project 09" data-description="add the story, process, and outcome here." aria-label="Preview Project 09">
-          <img src="assets/img/fish.svg" alt="Small blue fish drawing" width="120" height="120"><span class="project-label">Project 09</span>
+        <button class="project" type="button" data-content="food-review" aria-haspopup="dialog" aria-controls="preview">
+          <img src="assets/img/fish.svg" alt="" width="120" height="120">
+          <span class="project-label">Food Review</span>
         </button>
       </section>
     </main>
@@ -66,11 +75,292 @@
   </div>
 
   <dialog id="preview" aria-labelledby="preview-title">
-    <button class="close" type="button" aria-label="Close preview">×</button>
+    <button class="close" type="button" aria-label="Close window" autofocus>×</button>
+    <div class="preview-content">
     <img id="preview-image" src="assets/img/whale.svg" alt="" width="120" height="120">
-    <p class="eyebrow" id="preview-kind">Project preview</p>
+    <p class="eyebrow" id="preview-kind">Experiences</p>
     <h2 id="preview-title"></h2>
     <p id="preview-description"></p>
+    <div id="preview-entries"></div>
+    </div>
   </dialog>
+
+  <!-- CONTENT: replace the examples below with your own text, images, and links.
+       Copy a complete article inside a template to add another entry.
+       All example.com links are placeholders. -->
+  <template id="work-experience" data-kind="Experience">
+    <article class="experience-entry">
+      <header class="entry-header">
+        <!-- Replace this src with your company, organization, or school logo. -->
+        <img class="organization-logo" src="assets/img/organization-placeholder.svg" alt="" width="48" height="48" loading="lazy">
+        <div>
+          <h3>Role title</h3>
+          <p class="entry-organization">Company name</p>
+          <p class="experience-meta">Dates · Location</p>
+        </div>
+      </header>
+      <p>Describe your role, what you contributed, and the impact of your work.</p>
+      <!-- Add or remove li elements to change the technology tags. -->
+      <ul class="tech-tags" aria-label="Technologies">
+        <li>Technology name</li>
+        <li>Another technology</li>
+      </ul>
+      <figure class="entry-media">
+        <!-- Replace src and alt with your own photo and its description. -->
+        <img src="assets/img/photo-placeholder.svg" alt="Example image placeholder" width="800" height="480" loading="lazy">
+        <figcaption>A project or moment from this role.</figcaption>
+      </figure>
+      <!-- Replace the example URL and label with your own destination. -->
+      <p class="entry-links"><a href="https://example.com" target="_blank" rel="noopener noreferrer">Company or related work (example link) <span aria-hidden="true">↗</span></a></p>
+    </article>
+    <article class="experience-entry">
+      <header class="entry-header">
+        <!-- Replace this src with your company, organization, or school logo. -->
+        <img class="organization-logo" src="assets/img/organization-placeholder.svg" alt="" width="48" height="48" loading="lazy">
+        <div>
+          <h3>Another role title</h3>
+          <p class="entry-organization">Company name</p>
+          <p class="experience-meta">Dates · Location</p>
+        </div>
+      </header>
+      <p>Add another experience, including the work you did and what you learned.</p>
+      <!-- Add or remove li elements to change the technology tags. -->
+      <ul class="tech-tags" aria-label="Technologies">
+        <li>Technology name</li>
+        <li>Another technology</li>
+      </ul>
+
+    </article>
+  </template>
+
+  <template id="leadership" data-kind="Community &amp; leadership">
+    <article class="experience-entry">
+      <header class="entry-header">
+        <!-- Replace this src with your company, organization, or school logo. -->
+        <img class="organization-logo" src="assets/img/organization-placeholder.svg" alt="" width="48" height="48" loading="lazy">
+        <div>
+          <h3>Leadership role</h3>
+          <p class="entry-organization">Organization name</p>
+          <p class="experience-meta">Dates · Location</p>
+        </div>
+      </header>
+      <p>Describe the community you supported, your responsibilities, and what you helped make happen.</p>
+      <!-- Add or remove li elements to change the technology tags. -->
+      <ul class="tech-tags" aria-label="Technologies">
+        <li>Technology name</li>
+        <li>Another technology</li>
+      </ul>
+      <h4>Events &amp; highlights</h4>
+      <div class="media-gallery">
+      <figure class="entry-media">
+        <!-- Replace src and alt with your own photo and its description. -->
+        <img src="assets/img/photo-placeholder.svg" alt="Example image placeholder" width="800" height="480" loading="lazy">
+        <figcaption>Event name · A short caption about the event.</figcaption>
+      </figure>
+      <figure class="entry-media">
+        <!-- Replace src and alt with your own photo and its description. -->
+        <img src="assets/img/photo-placeholder.svg" alt="Example image placeholder" width="800" height="480" loading="lazy">
+        <figcaption>Another event or a second moment from the same event.</figcaption>
+      </figure>
+      </div>
+      <!-- Replace the example URL and label with your own destination. -->
+      <p class="entry-links"><a href="https://example.com" target="_blank" rel="noopener noreferrer">Event page (example link) <span aria-hidden="true">↗</span></a></p>
+    </article>
+    <article class="experience-entry">
+      <header class="entry-header">
+        <!-- Replace this src with your company, organization, or school logo. -->
+        <img class="organization-logo" src="assets/img/organization-placeholder.svg" alt="" width="48" height="48" loading="lazy">
+        <div>
+          <h3>Another leadership role</h3>
+          <p class="entry-organization">Organization name</p>
+          <p class="experience-meta">Dates · Location</p>
+        </div>
+      </header>
+      <p>Share another way you contributed to a team or community.</p>
+      <!-- Add or remove li elements to change the technology tags. -->
+      <ul class="tech-tags" aria-label="Technologies">
+        <li>Technology name</li>
+        <li>Another technology</li>
+      </ul>
+
+    </article>
+  </template>
+
+  <template id="education" data-kind="Learning">
+    <article class="experience-entry">
+      <header class="entry-header">
+        <!-- Replace this src with your company, organization, or school logo. -->
+        <img class="organization-logo" src="assets/img/organization-placeholder.svg" alt="" width="48" height="48" loading="lazy">
+        <div>
+          <h3>Degree / program</h3>
+          <p class="entry-organization">School name</p>
+          <p class="experience-meta">Dates · Location</p>
+        </div>
+      </header>
+      <p>Describe your studies, relevant coursework, or academic achievements.</p>
+      <!-- Add or remove li elements to change the technology tags. -->
+      <ul class="tech-tags" aria-label="Technologies">
+        <li>Technology name</li>
+        <li>Another technology</li>
+      </ul>
+      <!-- Replace the example URL and label with your own destination. -->
+      <p class="entry-links"><a href="https://example.com" target="_blank" rel="noopener noreferrer">School or program (example link) <span aria-hidden="true">↗</span></a></p>
+    </article>
+    <article class="experience-entry">
+      <header class="entry-header">
+        <!-- Replace this src with your company, organization, or school logo. -->
+        <img class="organization-logo" src="assets/img/organization-placeholder.svg" alt="" width="48" height="48" loading="lazy">
+        <div>
+          <h3>Course / certification</h3>
+          <p class="entry-organization">School or learning provider</p>
+          <p class="experience-meta">Dates · Location</p>
+        </div>
+      </header>
+      <p>Add another program or learning experience.</p>
+      <!-- Add or remove li elements to change the technology tags. -->
+      <ul class="tech-tags" aria-label="Technologies">
+        <li>Technology name</li>
+        <li>Another technology</li>
+      </ul>
+      <figure class="entry-media">
+        <!-- Replace src and alt with your own photo and its description. -->
+        <img src="assets/img/photo-placeholder.svg" alt="Example image placeholder" width="800" height="480" loading="lazy">
+        <figcaption>A class project, campus photo, or learning highlight.</figcaption>
+      </figure>
+    </article>
+  </template>
+
+  <template id="projects" data-kind="Project journal">
+    <!-- Copy this complete article for each new blog post. -->
+    <article class="experience-entry project-post">
+      <header>
+        <p class="experience-meta">Month Year · Project notes</p>
+        <h3>Your project title</h3>
+        <p>A short introduction to what you built and the idea behind it.</p>
+      </header>
+      <!-- Add or remove li elements to change the technology tags. -->
+      <ul class="tech-tags" aria-label="Technologies">
+        <li>Technology name</li>
+        <li>Another technology</li>
+      </ul>
+      <figure class="entry-media">
+        <!-- Replace src and alt with your own photo and its description. -->
+        <img src="assets/img/photo-placeholder.svg" alt="Example image placeholder" width="800" height="480" loading="lazy">
+        <figcaption>Your project screenshot, sketch, or demo.</figcaption>
+      </figure>
+      <h4>The idea</h4>
+      <p>Write about the problem you wanted to solve and why it mattered to you.</p>
+      <h4>How I built it</h4>
+      <p>Tell the story of your process. Add as many paragraphs, images, headings, and links as you need.</p>
+      <ul class="entry-list">
+        <li>A design or technical decision you made.</li>
+        <li>A challenge you worked through.</li>
+      </ul>
+      <h4>What I learned</h4>
+      <p>Share the result, what surprised you, and what you would like to try next.</p>
+      <p class="entry-links">
+        <!-- Replace both example destinations with your project URLs. -->
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">Live demo (example link) <span aria-hidden="true">↗</span></a>
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">Source code (example link) <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
+    <article class="experience-entry project-post">
+      <p class="experience-meta">Month Year · Project notes</p>
+      <h3>Another project title</h3>
+      <p>Start your next post here. Copy the sections above to tell its story.</p>
+    </article>
+  </template>
+
+  <template id="tech-stacks" data-kind="My toolkit">
+    <section class="experience-entry stack-section">
+      <h3>Languages</h3>
+      <!-- Copy a li for each tool. Replace the icon src and name together. -->
+      <ul class="stack-grid">
+        <li><img src="assets/img/technology-placeholder.svg" alt="" width="48" height="48" loading="lazy"><span>Language name</span></li>
+        <li><img src="assets/img/technology-placeholder.svg" alt="" width="48" height="48" loading="lazy"><span>Another language name</span></li>
+      </ul>
+    </section>
+    <section class="experience-entry stack-section">
+      <h3>Libraries &amp; Frameworks</h3>
+      <!-- Copy a li for each tool. Replace the icon src and name together. -->
+      <ul class="stack-grid">
+        <li><img src="assets/img/technology-placeholder.svg" alt="" width="48" height="48" loading="lazy"><span>Library name</span></li>
+        <li><img src="assets/img/technology-placeholder.svg" alt="" width="48" height="48" loading="lazy"><span>Another library name</span></li>
+      </ul>
+    </section>
+    <section class="experience-entry stack-section">
+      <h3>Developer Tools</h3>
+      <!-- Copy a li for each tool. Replace the icon src and name together. -->
+      <ul class="stack-grid">
+        <li><img src="assets/img/technology-placeholder.svg" alt="" width="48" height="48" loading="lazy"><span>Tool name</span></li>
+        <li><img src="assets/img/technology-placeholder.svg" alt="" width="48" height="48" loading="lazy"><span>Another tool name</span></li>
+      </ul>
+    </section>
+    <section class="experience-entry stack-section">
+      <h3>AI / ML</h3>
+      <!-- Copy a li for each tool. Replace the icon src and name together. -->
+      <ul class="stack-grid">
+        <li><img src="assets/img/technology-placeholder.svg" alt="" width="48" height="48" loading="lazy"><span>AI / ML tool name</span></li>
+        <li><img src="assets/img/technology-placeholder.svg" alt="" width="48" height="48" loading="lazy"><span>Another ai / ml tool name</span></li>
+      </ul>
+    </section>
+  </template>
+
+  <template id="interests" data-kind="What I'd like to work on">
+    <article class="experience-entry">
+      <h3>Open source</h3>
+      <p>I'm interested in contributing to open-source projects and learning alongside other developers.</p>
+      <!-- Add links to communities, issues, or projects you want to contribute to. -->
+    </article>
+    <article class="experience-entry">
+      <h3>AI / ML</h3>
+      <p>I'd like to explore AI and machine learning through hands-on projects.</p>
+    </article>
+    <article class="experience-entry">
+      <h3>What I'd like to explore next</h3>
+      <p>Add a problem, idea, or kind of collaboration you would like to work on.</p>
+      <!-- Replace the example URL and label with your own destination. -->
+      <p class="entry-links"><a href="https://example.com" target="_blank" rel="noopener noreferrer">Related project or inspiration (example link) <span aria-hidden="true">↗</span></a></p>
+    </article>
+  </template>
+
+  <template id="hobbies">
+    <article class="experience-entry">
+      <h3>Event / workshop</h3>
+      <p class="experience-meta">Dates · Location</p>
+      <p>Add your experience here: what you did, your contributions, and what you learned.</p>
+    </article>
+    <article class="experience-entry">
+      <h3>Another event</h3>
+      <p class="experience-meta">Dates · Location</p>
+      <p>Add another experience here. Copy an article block to include more entries in this topic.</p>
+    </article>
+  </template>
+
+  <template id="cooking">
+    <article class="experience-entry">
+      <h3>Drawing / creative project</h3>
+      <p class="experience-meta">Dates · Location</p>
+      <p>Add your experience here: what you did, your contributions, and what you learned.</p>
+    </article>
+    <article class="experience-entry">
+      <h3>Another creative project</h3>
+      <p class="experience-meta">Dates · Location</p>
+      <p>Add another experience here. Copy an article block to include more entries in this topic.</p>
+    </article>
+  </template>
+
+  <template id="food-review">
+    <article class="experience-entry">
+      <h3>Interest / activity</h3>
+      <p class="experience-meta">Dates · Location</p>
+      <p>Add your experience here: what you did, your contributions, and what you learned.</p>
+    </article>
+    <article class="experience-entry">
+      <h3>Another interest</h3>
+      <p class="experience-meta">Dates · Location</p>
+      <p>Add another experience here. Copy an article block to include more entries in this topic.</p>
+    </article>
+  </template>
 </body>
 </html>
