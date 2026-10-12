@@ -10,7 +10,7 @@ function openPreview() {
   preview.querySelector('.preview-content').scrollTop = 0;
 }
 
-function addProjectPicker() {
+function addProjectPicker(isBlog = false) {
   const posts = [...previewEntries.querySelectorAll('.project-post')];
   if (!posts.length) return;
 
@@ -18,7 +18,7 @@ function addProjectPicker() {
   picker.className = 'project-picker';
   const label = document.createElement('label');
   label.htmlFor = 'project-select';
-  label.textContent = 'Choose a project';
+  label.textContent = isBlog ? 'Choose a blog post' : 'Choose a project';
   const select = document.createElement('select');
   select.id = 'project-select';
   select.setAttribute('aria-controls', 'preview-entries');
@@ -53,6 +53,7 @@ document.querySelectorAll('.project').forEach((project) => {
     const content = document.getElementById(project.dataset.content);
     previewEntries.replaceChildren(content.content.cloneNode(true));
     if (project.dataset.content === 'projects') addProjectPicker();
+    if (project.dataset.content === 'blog') addProjectPicker(true);
     previewKind.textContent = content.dataset.kind || 'A little collection';
     openPreview();
   });

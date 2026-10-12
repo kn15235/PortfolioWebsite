@@ -486,18 +486,98 @@
   </template>
 
 <!-- blog section -->
-  <template id="blog" data-kind="sorry, in progress!">
-   <!-- <article class="experience-entry">
-      <h3>Event / workshop</h3>
-      <p class="experience-meta">Dates · Location</p>
-      <p>Add your experience here: what you did, your contributions, and what you learned.</p>
+  <template id="blog" data-kind="Internship reflections">
+    <article class="experience-entry project-post">
+      <header>
+        <p class="experience-meta">Summer 2024 · CodeCheck internship</p>
+        <h3>From using CodeCheck to contributing</h3>
+      </header>
+      <img class="blog-logo" src="assets/img/codecheck.png" alt="CodeCheck logo" width="489" height="136" loading="lazy">
+
+      <h4>A project I already knew</h4>
+      <p>Before contributing to CodeCheck, I had used it as a student at Orange Coast College. It is an automated grading tool that lets students practice programming and receive feedback on their code. Working on a tool I had used in my own classes made this internship feel especially meaningful.</p>
+
+      <h4>My contribution: issue #64</h4>
+      <p>CodeCheck used AWS services alongside Google Cloud Run. My task was to explore an AWS alternative for its container deployments, helping simplify the infrastructure across cloud providers. With guidance from our mentor, Cay Horstmann, I worked with AWS App Runner and Elastic Container Registry (ECR) to deploy the <code>comrun</code> and <code>play-codecheck</code> Docker images.</p>
+      <p>I used the AWS command line interface and documented the deployment steps in <code>build-instructions.md</code>, so someone setting up the application could follow the commands.</p>
+      
+
+      <h4>Two errors that taught me a lot</h4>
+      <p>One command could not connect to the App Runner endpoint in <code>us-west-1</code>. During the internship, I learned that App Runner was unavailable in that region at the time. Switching to <code>us-west-2</code> resolved the endpoint error, and my mentor helped me address the ECR access-role configuration needed for authentication.</p>
+      <figure class="entry-media blog-media">
+        <a href="assets/img/application-log.png" target="_blank" rel="noopener noreferrer" aria-label="View the application log screenshot at full size (opens in a new tab)">
+          <img src="assets/img/application-log.png" alt="Application log from the CodeCheck deployment" width="652" height="295" loading="lazy">
+        </a>
+        <figcaption>Application logs while debugging the deployment. Click to view full size.</figcaption>
+      </figure>
+      <p>The next challenge was a failed health check for <code>play-codecheck</code>. I had reused the port configuration from <code>comrun</code>, but the application logs in CloudWatch showed that the Play application was listening on port <code>9000</code>. Updating its configured port from <code>8080</code> to <code>9000</code> got the service running.</p>
+      <figure class="entry-media blog-media">
+        <a href="assets/img/listening-port8080.png" target="_blank" rel="noopener noreferrer" aria-label="View the listening port screenshot at full size (opens in a new tab)">
+          <img src="assets/img/listening-port8080.png" alt="Application logs showing the Play server listening on port 9000" width="786" height="191" loading="lazy">
+        </a>
+        <figcaption>The log showed that Play was listening on port 9000. Click to view full size.</figcaption>
+      </figure>
+      <figure class="entry-media blog-media">
+        <a href="assets/img/play-codecheck-service.png" target="_blank" rel="noopener noreferrer" aria-label="View the App Runner service screenshot at full size (opens in a new tab)">
+          <img src="assets/img/play-codecheck-service.png" alt="The play-codecheck service in AWS App Runner" width="683" height="318" loading="lazy">
+        </a>
+        <figcaption>The play-codecheck service after updating its configuration. Click to view full size.</figcaption>
+      </figure>
+
+      <h4>The outcome</h4>
+      <p>I got both services running, refined the deployment instructions, and submitted pull request #68!</p>
+      <h4>What I took away</h4>
+      <p>I started the internship with a lot of self-doubt because the codebase and cloud tools were new to me. Working through these errors helped me learn to read logs, check configuration assumptions, and ask more specific questions. I also became more comfortable with Docker images, AWS CLI commands, JSON, Markdown, and GitHub.</p>
+      <p>I'm grateful to Cay Horstmann, my teammates Christian Barajas and Benjamin Khor, and CTI and CodeDay for helping me contribute to a project that had already been part of my education.</p>
+
+      <p class="entry-links">
+        <a href="https://github.com/cayhorstmann/codecheck2/issues/64" target="_blank" rel="noopener noreferrer">Issue #64</a>
+        <a href="https://github.com/cayhorstmann/codecheck2/pull/68" target="_blank" rel="noopener noreferrer">My pull request #68</a>
+        <a href="https://horstmann.com/codecheck/index.html" target="_blank" rel="noopener noreferrer">CodeCheck website</a>
+      </p>
     </article>
-    <article class="experience-entry">
-      <h3>Another event</h3>
-      <p class="experience-meta">Dates · Location</p>
-      <p>Add another experience here. Copy an article block to include more entries in this topic.</p>
+
+    <article class="experience-entry project-post">
+      <header>
+        <p class="experience-meta">Fall 2023 · CTI Accelerate micro-internship</p>
+        <h3>Testing energy conversions with Open Energy Dashboard</h3>
+      </header>
+
+      <h4>Getting to know the project</h4>
+      <p>Open Energy Dashboard (OED) helps people explore energy-use data. During this internship, I worked with my team on testing how energy readings are converted and returned by the backend. This was an early experience navigating an open-source codebase and learning how expected data is used to check an API response.</p>
+
+      <h4>Our test case: B9</h4>
+      <p>Our work focused on test B9 in <code>src/server/test/web/readingsBarMeterQuantity.js</code>. It checks one-day bar readings from 15-minute input intervals, with no start or end time limit, and requests results in megajoules (MJ) from kilowatt-hour (kWh) meter data using a reverse conversion.</p>
+      <p>The test loads the units, conversions, and meter data, reads an expected CSV file, and calls <code>/api/unitReadings/bar/meters/</code> for the test meter. It then compares the API response with the expected readings using Mocha and Chai.</p>
+      <figure class="entry-media blog-media">
+        <a href="assets/img/test-b9.png" target="_blank" rel="noopener noreferrer" aria-label="View the B9 test code at full size (opens in a new tab)">
+          <img src="assets/img/test-b9.png" alt="JavaScript code for OED test B9 comparing API readings with expected CSV data" width="1229" height="344" loading="lazy">
+        </a>
+        <figcaption>Test B9 loads expected data and checks the API response. Click to view full size.</figcaption>
+      </figure>
+
+      <h4>The spreadsheet was part of the debugging</h4>
+      <p>One challenge was preparing the expected-value file correctly. We initially entered a formula incorrectly and struggled to get the test to pass. The project's <code>testing.md</code> documentation helped us work through how the expected data should be generated and formatted.</p>
+      <figure class="entry-media blog-media">
+        <a href="assets/img/pass-fail-cases.png" target="_blank" rel="noopener noreferrer" aria-label="View the test results screenshot at full size (opens in a new tab)">
+          <img src="assets/img/pass-fail-cases.png" alt="OED test output showing passing and failing cases during debugging" width="1183" height="226" loading="lazy">
+        </a>
+        <figcaption>Test results during debugging. Click to view full size.</figcaption>
+      </figure>
+      <p>My team and I corrected values and metrics in an Excel spreadsheet and uploaded the updated data back into the testing workflow. We needed to pay attention to both the conversions and the file formatting so the expected data could be used by the test.</p>
+
+      <h4>How we worked through it</h4>
+      <p>We reread the testing instructions, checked our formulas and data, and reached out to our mentor, Adam Hopkins, and CodeDay support for guidance. The draft captured a point when we had created an expected-value file but still had more conversion and formatting work to finish.</p>
+
+      <h4>The outcome and what I learned</h4>
+      <p> My team and I were able to fix the issue. The experience taught me that backend testing involves understanding the data as well as the code. It also helped me become more comfortable navigating GitHub, following technical documentation, and working with teammates when a test did not behave as expected.</p>
+
+      <p class="entry-links">
+        <a href="https://github.com/OpenEnergyDashboard/OED/pull/1102" target="_blank" rel="noopener noreferrer">Team pull request #1102</a>
+        <a href="https://github.com/OpenEnergyDashboard/DesignDocs/blob/main/testing/testing.md" target="_blank" rel="noopener noreferrer">Testing documentation</a>
+        <a href="https://openenergydashboard.org/" target="_blank" rel="noopener noreferrer">Open Energy Dashboard website</a>
+      </p>
     </article>
-    --> 
   </template>
 
 <!-- cooking section -->
