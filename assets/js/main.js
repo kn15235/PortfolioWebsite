@@ -10,6 +10,38 @@ function openPreview() {
   preview.querySelector('.preview-content').scrollTop = 0;
 }
 
+function addProjectPicker() {
+  const posts = [...previewEntries.querySelectorAll('.project-post')];
+  if (!posts.length) return;
+
+  const picker = document.createElement('div');
+  picker.className = 'project-picker';
+  const label = document.createElement('label');
+  label.htmlFor = 'project-select';
+  label.textContent = 'Choose a project';
+  const select = document.createElement('select');
+  select.id = 'project-select';
+  select.setAttribute('aria-controls', 'preview-entries');
+
+  posts.forEach((post, index) => {
+    const option = document.createElement('option');
+    option.value = String(index);
+    option.textContent = post.querySelector('h3').textContent.trim();
+    select.append(option);
+    post.hidden = index !== 0;
+  });
+
+  select.addEventListener('change', () => {
+    posts.forEach((post, index) => {
+      post.hidden = index !== Number(select.value);
+    });
+    preview.querySelector('.preview-content').scrollTop = 0;
+  });
+
+  picker.append(label, select);
+  previewEntries.prepend(picker);
+}
+
 document.querySelector('#year').textContent = new Date().getFullYear();
 
 document.querySelectorAll('.project').forEach((project) => {
@@ -20,6 +52,7 @@ document.querySelectorAll('.project').forEach((project) => {
     previewDescription.hidden = true;
     const content = document.getElementById(project.dataset.content);
     previewEntries.replaceChildren(content.content.cloneNode(true));
+    if (project.dataset.content === 'projects') addProjectPicker();
     previewKind.textContent = content.dataset.kind || 'A little collection';
     openPreview();
   });
