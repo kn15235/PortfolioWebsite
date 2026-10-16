@@ -30,7 +30,8 @@ h1, .intro p { font-size: 16px; font-weight: 400; line-height: 1.8; margin: 0; }
 .social-links a[href]:hover, .social-links a[href]:focus-visible { color: var(--accent); background: #faf5f3; }
 .social-links svg { display: block; }
 .work { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; scroll-margin-top: 30px; }
-.project { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; aspect-ratio: 1.12; padding: 24px 16px; background: var(--tile); border: 0; border-radius: 0; }
+.project { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; aspect-ratio: 1.12; padding: 24px 16px; background: var(--tile); border: 0; border-radius: 0; transition: background-color .2s ease; }
+.project:focus-visible { background: #e9e9e9; }
 .project img { width: 52%; max-width: 125px; height: auto; transition: transform .22s ease; }
 .project-label { font-size: 13px; line-height: 1.4; color: #555; overflow-wrap: anywhere; }
 .project[data-content="work-experience"] { --creature-motion: whale-bob; --creature-speed: 1.8s; }
@@ -44,6 +45,7 @@ h1, .intro p { font-size: 16px; font-weight: 400; line-height: 1.8; margin: 0; }
 .project[data-content="pixel-art"] { --creature-motion: fish-swish; --creature-speed: 1.2s; }
 .project:focus-visible img { animation: var(--creature-motion) var(--creature-speed) ease-in-out infinite; }
 @media (hover: hover) {
+  .project:hover { background: #e9e9e9; }
   .project:hover img { animation: var(--creature-motion) var(--creature-speed) ease-in-out infinite; }
 }
 @keyframes whale-bob { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-6px) rotate(-4deg); } }
@@ -62,6 +64,12 @@ footer a { color: var(--accent); }
 .skip-link:focus { top: 12px; }
 dialog { width: min(620px, calc(100% - 32px)); max-height: calc(100% - 32px); padding: 48px 0 0; overflow: hidden; border: 0; color: var(--ink); text-align: center; }
 .preview-content { max-height: calc(100dvh - 112px); overflow-y: auto; overscroll-behavior: contain; padding: 0 36px 32px; }
+dialog[open] .preview-content :is(img, h2, h3, h4, p, li, figcaption, label, select) { animation: preview-item-in .45s ease-out both; }
+dialog[open] .preview-content img { animation-delay: .04s; }
+dialog[open] .preview-content :is(h2, h3, h4, label, select) { animation-delay: .1s; }
+dialog[open] .preview-content p { animation-delay: .16s; }
+dialog[open] .preview-content :is(li, figcaption) { animation-delay: .22s; }
+@keyframes preview-item-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 dialog::backdrop { background: rgb(0 0 0 / 25%); }
 body:has(dialog[open]) { overflow: hidden; }
 .close { position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; border: 0; background: none; font-size: 25px; color: #777; }
