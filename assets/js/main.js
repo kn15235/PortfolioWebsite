@@ -66,7 +66,7 @@ document.querySelector('[data-about]').addEventListener('click', () => {
   previewEntries.replaceChildren();
   previewDescription.hidden = false;
   //replace w/  own bio.
-  previewDescription.textContent = 'Welcome! This is a collection of my projects, ideas, and things I enjoy making. Still in progress haha';
+  previewDescription.textContent = 'Welcome! This is a collection of my projects, ideas, and things I enjoy making.';
   openPreview();
 });
 
