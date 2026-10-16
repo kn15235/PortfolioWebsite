@@ -22,6 +22,25 @@ nav a, nav button { padding: 4px 0; background: none; border: 0; color: var(--mu
 nav .active, nav a:hover, nav button:hover { color: var(--ink); }
 .intro { text-align: center; padding: 78px 0 48px; }
 .intro-drawing { display: block; margin: 0 auto 25px; object-fit: contain; }
+.portrait { position: relative; display: block; width: 100px; height: 100px; margin: 0 auto 25px; padding: 0; border: 0; border-radius: 16px; background: transparent; }
+.portrait .intro-drawing { margin: 0; transition: opacity .2s ease; }
+.portrait-happy { position: absolute; inset: 0; opacity: 0; }
+.portrait-greeting { position: absolute; bottom: 78%; left: 83%; padding: 8px 14px; border: 2px solid #414344; border-radius: 16px 16px 16px 4px; background: #fffaf0; color: #414344; font-size: 13px; white-space: nowrap; opacity: 0; transform: translateY(5px) scale(.9); transform-origin: bottom left; transition: opacity .2s ease, transform .2s ease; pointer-events: none; }
+.portrait:is(:focus-visible, [aria-pressed="true"]) .portrait-normal { opacity: 0; }
+.portrait:is(:focus-visible, [aria-pressed="true"]) .portrait-happy { opacity: 1; }
+.portrait:is(:focus-visible, [aria-pressed="true"]) .portrait-greeting { opacity: 1; transform: translateY(0) scale(1); }
+@media (hover: hover) {
+  .portrait:hover .portrait-normal { opacity: 0; }
+  .portrait:hover .portrait-happy { opacity: 1; }
+  .portrait:hover .portrait-greeting { opacity: 1; transform: translateY(0) scale(1); }
+}
+.page { position: relative; z-index: 1; }
+.site-sparkles { position: fixed; inset: 0; z-index: 0; pointer-events: none; user-select: none; overflow: hidden; }
+.is-loading .site-sparkles { visibility: hidden; }
+.site-sparkles span { position: absolute; left: var(--x); top: var(--y); width: var(--size); height: var(--size); background: #d3ab74; mask: url('../img/sparkle.svg') center / contain no-repeat; opacity: .55; animation: sparkle-twinkle 4s ease-in-out infinite; animation-delay: var(--delay); }
+.site-sparkles span:nth-child(3n + 2) { background: #bc7f7e; animation-duration: 4.6s; }
+.site-sparkles span:nth-child(3n) { background: #b2a0ce; animation-duration: 5s; }
+@keyframes sparkle-twinkle { 0%, 100% { opacity: .2; transform: scale(.7) rotate(-8deg); } 50% { opacity: .85; transform: scale(1.1) rotate(8deg); } }
 h1, .intro p { font-size: 16px; font-weight: 400; line-height: 1.8; margin: 0; }
 .scroll-cue { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-top: 26px; }
 .scroll-cue span { width: 23px; height: 23px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); transform: translateY(-6px) rotate(45deg); }

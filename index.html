@@ -11,6 +11,14 @@
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
+  <div class="site-sparkles" aria-hidden="true">
+    <span style="--x: 6%; --y: 24%; --size: 22px; --delay: 0s"></span>
+    <span style="--x: 13%; --y: 72%; --size: 14px; --delay: -1.2s"></span>
+    <span style="--x: 89%; --y: 34%; --size: 18px; --delay: -.7s"></span>
+    <span style="--x: 94%; --y: 82%; --size: 24px; --delay: -2s"></span>
+    <span style="--x: 28%; --y: 12%; --size: 12px; --delay: -1.7s"></span>
+    <span style="--x: 73%; --y: 17%; --size: 15px; --delay: -.3s"></span>
+  </div>
   <div class="site-loader" role="status" aria-label="Loading Kristine's portfolio. Please wait.">
     <div class="loader-scene" aria-hidden="true">
       <svg class="loader-waves loader-waves-back" viewBox="0 0 640 80" fill="none">
@@ -60,7 +68,11 @@
     <main>
       <section class="intro" aria-labelledby="intro-title">
         <!-- introductory/main image -->
-        <img class="intro-drawing" src="assets/img/girl.svg" alt="main pfp" width="100" height="100">
+        <button class="portrait" type="button" aria-label="Say hello to Kristine" aria-pressed="false">
+          <img class="intro-drawing portrait-normal" src="assets/img/girl.svg" alt="Illustration of Kristine" width="100" height="100">
+          <img class="intro-drawing portrait-happy" src="assets/img/girl-happy.svg" alt="" width="100" height="100" aria-hidden="true">
+          <span class="portrait-greeting" aria-hidden="true">hello!</span>
+        </button>
         <h1 id="intro-title">Greetings, I'm Kristine</h1>
         <p> Welcome to my site!</p>
         <a class="scroll-cue" href="#work" aria-label="Explore my experiences"><span></span></a>

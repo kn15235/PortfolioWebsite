@@ -5,6 +5,11 @@ const previewDescription = document.querySelector('#preview-description');
 const previewKind = document.querySelector('#preview-kind');
 const previewEntries = document.querySelector('#preview-entries');
 
+document.querySelector('.portrait')?.addEventListener('click', (event) => {
+  const portrait = event.currentTarget;
+  portrait.setAttribute('aria-pressed', String(portrait.getAttribute('aria-pressed') !== 'true'));
+});
+
 function openPreview() {
   preview.showModal();
   preview.querySelector('.preview-content').scrollTop = 0;
