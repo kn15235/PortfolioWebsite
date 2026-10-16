@@ -33,7 +33,28 @@ h1, .intro p { font-size: 16px; font-weight: 400; line-height: 1.8; margin: 0; }
 .project { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; aspect-ratio: 1.12; padding: 24px 16px; background: var(--tile); border: 0; border-radius: 0; }
 .project img { width: 52%; max-width: 125px; height: auto; transition: transform .22s ease; }
 .project-label { font-size: 13px; line-height: 1.4; color: #555; overflow-wrap: anywhere; }
-.project:hover img, .project:focus-visible img { transform: translateY(-6px) rotate(-4deg); }
+.project[data-content="work-experience"] { --creature-motion: whale-bob; --creature-speed: 1.8s; }
+.project[data-content="leadership"] { --creature-motion: crab-wiggle; --creature-speed: .8s; }
+.project[data-content="education"] { --creature-motion: turtle-paddle; --creature-speed: 2s; }
+.project[data-content="projects"] { --creature-motion: octopus-dance; --creature-speed: 1.4s; }
+.project[data-content="blog"] { --creature-motion: starfish-rock; --creature-speed: 1.6s; }
+.project[data-content="tech-stacks"] { --creature-motion: shark-cruise; --creature-speed: 1.4s; }
+.project[data-content="interests"] { --creature-motion: jellyfish-float; --creature-speed: 2s; }
+.project[data-content="cooking"] { --creature-motion: squid-pulse; --creature-speed: 1.4s; }
+.project[data-content="pixel-art"] { --creature-motion: fish-swish; --creature-speed: 1.2s; }
+.project:focus-visible img { animation: var(--creature-motion) var(--creature-speed) ease-in-out infinite; }
+@media (hover: hover) {
+  .project:hover img { animation: var(--creature-motion) var(--creature-speed) ease-in-out infinite; }
+}
+@keyframes whale-bob { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-6px) rotate(-4deg); } }
+@keyframes crab-wiggle { 0%, 100% { transform: translateX(0) rotate(0); } 25% { transform: translateX(-3px) rotate(-5deg); } 75% { transform: translateX(3px) rotate(5deg); } }
+@keyframes turtle-paddle { 0%, 100% { transform: translateX(0) rotate(0); } 50% { transform: translateX(5px) rotate(4deg); } }
+@keyframes octopus-dance { 0%, 100% { transform: translateY(0) rotate(0); } 25% { transform: translateY(-4px) rotate(-6deg); } 75% { transform: translateY(-4px) rotate(6deg); } }
+@keyframes starfish-rock { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-9deg); } 75% { transform: rotate(9deg); } }
+@keyframes shark-cruise { 0%, 100% { transform: translateX(0) rotate(0); } 30% { transform: translate(6px, -2px) rotate(-3deg); } 70% { transform: translate(-4px, 2px) rotate(3deg); } }
+@keyframes jellyfish-float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.025, .98); } }
+@keyframes squid-pulse { 0%, 100% { transform: translateY(0) scale(1); } 40% { transform: translateY(-6px) scale(.97, 1.04); } 70% { transform: translateY(-2px) scale(1.02, .98); } }
+@keyframes fish-swish { 0%, 100% { transform: translateX(0) rotate(0); } 25% { transform: translateX(5px) rotate(-5deg); } 75% { transform: translateX(-5px) rotate(5deg); } }
 footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 36px 0 44px; font-size: 10px; }
 footer small { color: #777; font-size: inherit; }
 footer a { color: var(--accent); }
