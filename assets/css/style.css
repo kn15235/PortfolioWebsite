@@ -85,6 +85,36 @@ dialog h2 { font-size: 22px; font-weight: 500; }
 .stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 22px 14px; padding: 0; margin: 22px 0 4px; list-style: none; }
 .stack-grid li { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; font-size: 12px; line-height: 1.5; color: #666; }
 .stack-grid img { width: 48px; height: 48px; object-fit: contain; }
+.site-loader { display: none; }
+.is-loading { overflow: hidden; }
+.is-loading .page, .is-loading .skip-link { visibility: hidden; }
+.is-loading .site-loader { position: fixed; inset: 0; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fff; }
+.loader-scene { position: relative; width: min(300px, 85vw); height: 180px; overflow: hidden; }
+.surfing-crab { position: absolute; top: 8px; left: calc(50% - 75px); width: 150px; height: 140px; animation: crab-surf 1.5s ease-in-out infinite; }
+.loader-crab { display: block; margin: 0 auto; overflow: visible; }
+.crab-claw { transform-box: view-box; animation: claw-wave .75s ease-in-out infinite alternate; }
+.crab-claw-left { transform-origin: 35px 65px; }
+.crab-claw-right { transform-origin: 84px 65px; animation-direction: alternate-reverse; animation-delay: -.2s; }
+.surfboard { position: absolute; top: 94px; left: 0; width: 150px; height: 30px; }
+.loader-waves { position: absolute; left: -80px; width: 640px; height: 80px; stroke-width: 2.2; stroke-linecap: round; animation: wave-drift 1.8s linear infinite; }
+.loader-waves-back { top: 92px; stroke: #8cc8ef; }
+.loader-waves-front { top: 116px; stroke: #3b94cf; animation-duration: 2.4s; animation-direction: reverse; }
+.loader-message { margin: 4px 0 14px; color: #716252; font-size: 13px; }
+.loader-dots { display: flex; gap: 7px; }
+.loader-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: dot-bounce .9s ease-in-out infinite; }
+.loader-dots span:nth-child(2) { animation-delay: .15s; }
+.loader-dots span:nth-child(3) { animation-delay: .3s; }
+.page-ready .header, .page-ready .intro > *, .page-ready .project, .page-ready footer { animation: page-fade-in .6s ease-out both; }
+.page-ready .intro > * { animation-delay: .08s; }
+.page-ready .project { animation-delay: .16s; }
+.page-ready .project:nth-child(3n + 2) { animation-delay: .24s; }
+.page-ready .project:nth-child(3n) { animation-delay: .32s; }
+.page-ready footer { animation-delay: .4s; }
+@keyframes crab-surf { 0%, 100% { transform: translate(-8px, 2px) rotate(-5deg); } 50% { transform: translate(8px, -6px) rotate(5deg); } }
+@keyframes claw-wave { from { transform: rotate(-14deg); } to { transform: rotate(14deg); } }
+@keyframes wave-drift { to { transform: translateX(-160px); } }
+@keyframes dot-bounce { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-5px); opacity: 1; } }
+@keyframes page-fade-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 600px) {
   .page { width: calc(100% - 36px); }
   .header { padding-top: 28px; gap: 12px; }
@@ -99,5 +129,5 @@ dialog h2 { font-size: 22px; font-weight: 500; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }
